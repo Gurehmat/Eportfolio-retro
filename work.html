@@ -1,0 +1,207 @@
+<!doctype html>
+<!--
+AUTHOR: Gurehmat
+CONTENT: Work / Projects
+-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Work | Gurehmat C.</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Selected projects by Gurehmat C., including PantryCheff (AI recipe app) and SEED (Best UI at MillHacks). Live demos, stack, and contributions.">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://kit.fontawesome.com/18ac903506.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="topbar">
+            <div class="brand">
+                <span class="brand_name">
+                    GUREHMAT C.
+                </span>
+            </div>
+
+            <nav class="nav">
+                <a href="index.html" class="nav_link">HOME</a>
+                <a href="about.html" class="nav_link">ABOUT</a>
+                <a href="work.html" class="nav_link is-active">WORK</a>
+                <a href="journal.html" class="nav_link">JOURNAL</a>
+            </nav>
+            <div class="topbar_actions">
+                <a class="icon-btn" href="https://github.com/Gurehmat" target="_blank" rel="noopener">GH</a>
+                <a class="icon-btn" href="https://www.linkedin.com/in/gurehmat-chahal-24696020b/" target="_blank" rel="noopener">IN</a>
+                <a class="icon-btn" href="mailto:chahag21@mcmaster.ca">EM</a>
+            </div>
+            <a class="btn btn--resume" href="resume.pdf" target="_blank" rel="noopener">[ RESUME ]</a>
+        </div>
+    </header>
+
+    <main id="main" class="container">
+        <section class="panel">
+            <div class="panel_head">
+                <h2 class="h2">WORK</h2>
+                <p class="muted">Selected projects</p>
+            </div>
+
+            <div class="work_list">
+                <!-- Card 1: PantryCheff -->
+                <article class="card entry project_entry">
+                    <header class="entry_header project_header">
+                        <div class="project_terminal-left">
+                            <span class="terminal_dots" aria-hidden="true">
+                                <span class="terminal_dot terminal_dot--red"></span>
+                                <span class="terminal_dot terminal_dot--dim"></span>
+                                <span class="terminal_dot terminal_dot--dim"></span>
+                            </span>
+                            <span class="project_prompt">pantrycheff@projects:~$</span>
+                        </div>
+                        <div class="project_meta-chips">
+                            <span class="pill">[ 2026 ]</span>
+                            <span class="pill">[ full-stack ]</span>
+                            <span class="pill">[ ai ]</span>
+                        </div>
+                    </header>
+                    <div class="entry_body project_body">
+                        <div class="project_layout">
+                        <div class="project_dossier">
+                            <div class="project_thumb">
+                                <a href="https://gurehmat.github.io/PANTRYCHEFFV3/#/" class="project_media" target="_blank" rel="noopener" aria-label="PantryCheff live demo">
+                                    <img class="project_media--img" src="./images/pantrycheff-use.png" alt="PantryCheff core screen: pantry scan and recipe match interface">
+                                </a>
+                            </div>
+                            <div class="dossier_panel dossier_outcome">
+                                <div class="dossier_panel_title">OUTCOME</div>
+                                <div class="dossier_outcome_lines">
+                                    <div><span class="dossier_k">STATUS</span><span class="dossier_v">Shipped</span></div>
+                                    <div><span class="dossier_k">SCOPE</span><span class="dossier_v">Full-stack SPA · pantry + recipes</span></div>
+                                    <div><span class="dossier_k">FLOW</span><span class="dossier_v">Scan → Match → Generate</span></div>
+                                </div>
+                            </div>
+                            <div class="dossier_panel dossier_highlights">
+                                <div class="dossier_panel_title">HIGHLIGHTS</div>
+                                <p class="dossier_highlights_text">Photo→ingredients pipeline; Supabase Edge Functions. Pantry Match Score; deploy to GitHub Pages.</p>
+                            </div>
+                        </div>
+                        <div class="project_content">
+                            <h3 class="project_title">PantryCheff</h3>
+                            <p class="project_pitch">
+                                AI-powered pantry + recipe app that reduces food waste by cooking with what you already have.
+                            </p>
+                            <ul class="project_bullets">
+                                <li><strong>Built</strong> a photo → ingredients pipeline via Supabase Edge Functions to produce a validated, structured pantry list.</li>
+                                <li><strong>Designed</strong> a Pantry Match Score that ranks recipes by coverage, enabling “cook now” recommendations.</li>
+                                <li><strong>Deployed</strong> an end-to-end flow (scan → match → generate) to GitHub Pages with a usable, responsive UI.</li>
+                            </ul>
+                            <p class="project_arch">
+                                <span class="meta_k">Architecture:</span> React 19 SPA → Supabase (Auth, Postgres, Edge Functions) → Gemini API for vision and recipe generation.
+                            </p>
+                            <div class="project_stack-row">
+                                <div class="project_stack">
+                                    <span class="pill">[ REACT 19 ]</span>
+                                    <span class="pill">[ VITE ]</span>
+                                    <span class="pill">[ TAILWIND ]</span>
+                                    <span class="pill">[ ZUSTAND ]</span>
+                                    <span class="pill">[ SUPABASE ]</span>
+                                    <span class="pill">[ POSTGRES ]</span>
+                                    <span class="pill">[ EDGE FUNCTIONS ]</span>
+                                    <span class="pill pill--blue">[ GEMINI API ]</span>
+                                </div>
+                            </div>
+                            <div class="project_actions">
+                                <a href="https://gurehmat.github.io/PANTRYCHEFFV3/#/" class="btn btn--primary" target="_blank" rel="noopener">[ LIVE DEMO ]</a>
+                                <a href="https://github.com/Gurehmat/PANTRYCHEFFV3" class="btn btn--ghost" target="_blank" rel="noopener">[ SOURCE ]</a>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </article>
+
+                <!-- Card 2: SEED -->
+                <article class="card entry project_entry">
+                    <header class="entry_header project_header">
+                        <div class="project_terminal-left">
+                            <span class="terminal_dots" aria-hidden="true">
+                                <span class="terminal_dot terminal_dot--red"></span>
+                                <span class="terminal_dot terminal_dot--dim"></span>
+                                <span class="terminal_dot terminal_dot--dim"></span>
+                            </span>
+                            <span class="project_prompt">seed@projects:~$</span>
+                        </div>
+                        <div class="project_meta-chips">
+                            <span class="pill">[ 2026 ]</span>
+                            <span class="pill">[ hackathon ]</span>
+                            <span class="pill">[ best ui ]</span>
+                        </div>
+                    </header>
+                    <div class="entry_body project_body">
+                        <div class="project_layout">
+                        <div class="project_dossier">
+                            <div class="project_thumb">
+                                <a href="https://gurehmat.github.io/Millhacks-Website/" class="project_media" target="_blank" rel="noopener" aria-label="SEED live site">
+                                    <img class="project_media--img" src="./images/millhacks.png" alt="SEED site: climate-tech storytelling and responsive sections">
+                                </a>
+                            </div>
+                            <div class="dossier_panel dossier_outcome">
+                                <div class="dossier_panel_title">OUTCOME</div>
+                                <div class="dossier_outcome_lines">
+                                    <div><span class="dossier_k">STATUS</span><span class="dossier_v">Shipped</span></div>
+                                    <div><span class="dossier_k">SCOPE</span><span class="dossier_v">Static hackathon site</span></div>
+                                    <div><span class="dossier_k">FLOW</span><span class="dossier_v">Storytelling · judge-facing</span></div>
+                                </div>
+                            </div>
+                            <div class="dossier_panel dossier_highlights">
+                                <div class="dossier_panel_title">HIGHLIGHTS</div>
+                                <p class="dossier_highlights_text">Mobile-first judge-facing layout; modular SCSS. Shipped static site; conceptual ML/drone scope.</p>
+                            </div>
+                        </div>
+                        <div class="project_content">
+                            <h3 class="project_title">SEED</h3>
+                            <p class="project_subtitle muted">Sustainable Environmental Eradication of Debris</p>
+                            <p class="project_pitch">
+                                Single-page hackathon site that explains a climate-tech concept to reduce coastal plastic pollution with clear storytelling and responsive UI.
+                            </p>
+                            <ul class="project_bullets">
+                                <li><strong>Designed</strong> a mobile-first, scannable layout optimized for judges/sponsors under hackathon time constraints.</li>
+                                <li><strong>Implemented</strong> modular SCSS components for consistent spacing, typography, and visual hierarchy across sections.</li>
+                                <li><strong>Shipped</strong> the full static site to GitHub Pages and documented scope clearly (conceptual ML/drone pipeline; no model code in repo).</li>
+                            </ul>
+                            <p class="project_arch">
+                                <span class="meta_k">Architecture:</span> Static HTML/SCSS single-page site deployed to GitHub Pages (no backend or live ML pipeline in this version).
+                            </p>
+                            <div class="project_stack-row">
+                                <div class="project_stack">
+                                    <span class="pill">[ HTML5 ]</span>
+                                    <span class="pill pill--blue">[ SCSS / SASS ]</span>
+                                    <span class="pill">[ CSS3 ]</span>
+                                    <span class="pill">[ VANILLA JS ]</span>
+                                    <span class="pill">[ GITHUB PAGES ]</span>
+                                </div>
+                            </div>
+                            <div class="project_actions">
+                                <a href="https://gurehmat.github.io/Millhacks-Website/" class="btn btn--primary" target="_blank" rel="noopener">[ LIVE SITE ]</a>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </article>
+
+                <!-- Add more projects: duplicate the full <article class="card entry project_entry"> block -->
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer_left">
+                <span class="muted">&copy; <span id="year">2026</span> Gurehmat C.</span>
+            </div>
+            <div class="footer_right">
+                <span class="muted">Built for CS 1XD3 | Seeking Internship | Reach Out! </span>
+            </div>
+        </footer>
+    </main>
+
+</body>
+
+</html>
+ 
