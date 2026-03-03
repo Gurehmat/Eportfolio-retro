@@ -7,6 +7,7 @@ CONTENT: Hello World - First Lab
 
 <head>
     <meta charset="utf-8">
+    <script>(function(){var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');else if(window.matchMedia('(prefers-color-scheme:dark)').matches)document.documentElement.setAttribute('data-theme','dark');})();</script>
     <title>About | Gurehmat C.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Learn more about Gurehmat C., a Computer Science student at McMaster University interested in software engineering, web development, and building practical projects.">
@@ -30,9 +31,16 @@ CONTENT: Hello World - First Lab
                 <a href="journal.html" class="nav_link">JOURNAL</a>
             </nav>
             <div class="topbar_actions">
-                <a class="icon-btn" href="https://github.com/Gurehmat" target="_blank" rel="noopener">GH</a>
-                <a class="icon-btn" href="https://www.linkedin.com/in/gurehmat-chahal-24696020b/" target="_blank" rel="noopener">IN</a>
-                <a class="icon-btn" href="mailto:chahag21@mcmaster.ca">EM</a>
+                <button type="button" class="icon-btn theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">[ DARK ]</button>
+                <a class="icon-btn icon-btn--logo" href="https://github.com/Gurehmat" target="_blank" rel="noopener" aria-label="GitHub">
+                    <img class="icon-logo" src="./images/github-pixelated.png" alt="GitHub">
+                </a>
+                <a class="icon-btn icon-btn--logo" href="https://www.linkedin.com/in/gurehmat-chahal-24696020b/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <img class="icon-logo" src="./images/linkedin-pixelated.png" alt="LinkedIn">
+                </a>
+                <a class="icon-btn icon-btn--logo" href="mailto:chahag21@mcmaster.ca" aria-label="Email">
+                    <img class="icon-logo" src="./images/email-pixelated.png" alt="Email">
+                </a>
             </div>
             <a class="btn btn--resume" href="resume.pdf" target="_blank" rel="noopener">[ RESUME ]</a>
         </div>
@@ -46,20 +54,31 @@ CONTENT: Hello World - First Lab
             </div>
 
             <div class="hero_grid">
-                <section class="card">
+                <section class="card about_intro reveal">
+                    <div class="card_media about_childhood-media">
+                        <img
+                            src="./images/Childhood-pixelated.png"
+                            alt="Childhood photo of Gurehmat in pixelated style"
+                            class="childhood-photo"
+                            data-toggle-childhood
+                            data-pixel-src="./images/Childhood-pixelated.png"
+                            data-normal-src="./images/childhood.png"
+                            style="image-rendering: pixelated;"
+                        >
+                    </div>
                     <div class="card_body">
-                        <h3 class="h3">I build full-stack apps and ship them.</h3>
-                        <p class="about_subline muted">Targeting: software engineering & web dev internships.</p>
+                        <h3 class="h3">Hi, I’m Gurehmat.</h3>
+                        <p class="about_subline muted">I like learning stuff and building things.</p>
                         <ul class="bullet_points">
-                            <li><strong>Shipped</strong> PantryCheff end-to-end (scan → match → generate) to GitHub Pages with Supabase + Gemini.</li>
-                            <li><strong>Owned</strong> photo→ingredients pipeline and Pantry Match Score; deployed via Edge Functions.</li>
-                            <li><strong>Built</strong> SEED hackathon site (Best UI at MillHacks); mobile-first, modular SCSS.</li>
+                            <li>Muay Thai, BJJ, hiking, anything active. Last year I won the NSS Healthy Living Competition grand prize. Something like 9k people and 11 countries.</li>
+                            <li>Videogames, built a few PCs from scratch. Same tinkering vibe goes into how I write code.</li>
+                            <li>I like projects where you can see the impact. PantryCheff, hackathon sites, stuff like that.</li>
                         </ul>
-                        <p class="about_now"><span class="meta_k">Now:</span> Seeking summer 2026 internship; available to start on timeline.</p>
+                        <p class="about_now"><span class="meta_k">Now:</span> Looking for a Summer 2026 internship.</p>
                     </div>
                 </section>
 
-                <section class="card">
+                <section class="card reveal reveal--stagger-1">
                     <div class="card_body">
                         <div class="proof_strip">
                             <span class="pill">[ shipped ]</span>
@@ -82,6 +101,7 @@ CONTENT: Hello World - First Lab
                             <div class="label">// TOOLS</div>
                             <div class="tech_pills">
                                 <span class="pill pill--blue">[ REACT ]</span>
+                                <span class="pill">[ ZUSTAND ]</span>
                                 <span class="pill">[ VITE ]</span>
                                 <span class="pill">[ TAILWIND ]</span>
                                 <span class="pill">[ SUPABASE ]</span>
@@ -119,7 +139,28 @@ CONTENT: Hello World - First Lab
         </footer>
     </main>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var img = document.querySelector('[data-toggle-childhood]');
+            if (!img) return;
 
+            var pixelSrc = img.getAttribute('data-pixel-src');
+            var normalSrc = img.getAttribute('data-normal-src');
+            var isPixel = true;
+
+            img.addEventListener('click', function () {
+                if (isPixel) {
+                    img.src = normalSrc;
+                    img.style.imageRendering = 'auto';
+                } else {
+                    img.src = pixelSrc;
+                    img.style.imageRendering = 'pixelated';
+                }
+                isPixel = !isPixel;
+            });
+        });
+    </script>
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

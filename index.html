@@ -7,6 +7,7 @@ CONTENT: Hello World - First Lab
 
 <head>
     <meta charset="utf-8">
+    <script>(function(){var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');else if(window.matchMedia('(prefers-color-scheme:dark)').matches)document.documentElement.setAttribute('data-theme','dark');})();</script>
     <title>Gurehmat C. | Software Engineering Student</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="E‑portfolio for Gurehmat C., Computer Science student at McMaster University seeking a Software Engineering internship. View projects, experience, and coursework.">
@@ -30,9 +31,16 @@ CONTENT: Hello World - First Lab
                 <a href="journal.html" class="nav_link">JOURNAL</a>
             </nav>
             <div class="topbar_actions">
-                <a class="icon-btn" href="https://github.com/Gurehmat" target="_blank" rel="noopener">GH</a>
-                <a class="icon-btn" href="https://www.linkedin.com/in/gurehmat-chahal-24696020b/" target="_blank" rel="noopener">IN</a>
-                <a class="icon-btn" href="mailto:chahag21@mcmaster.ca">EM</a>
+                <button type="button" class="icon-btn theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">[ DARK ]</button>
+                <a class="icon-btn icon-btn--logo" href="https://github.com/Gurehmat" target="_blank" rel="noopener" aria-label="GitHub">
+                    <img class="icon-logo" src="./images/github-pixelated.png" alt="GitHub">
+                </a>
+                <a class="icon-btn icon-btn--logo" href="https://www.linkedin.com/in/gurehmat-chahal-24696020b/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <img class="icon-logo" src="./images/linkedin-pixelated.png" alt="LinkedIn">
+                </a>
+                <a class="icon-btn icon-btn--logo" href="mailto:chahag21@mcmaster.ca" aria-label="Email">
+                    <img class="icon-logo" src="./images/email-pixelated.png" alt="Email">
+                </a>
             </div>
             <a class="btn btn--resume" href="resume.pdf" target="_blank" rel="noopener">[ RESUME ]</a>
         </div>
@@ -65,7 +73,7 @@ CONTENT: Hello World - First Lab
                 </section>
                 <section class="card terminal">
                     <div class="terminal_top">
-                        <span class="terminal_username">gurehmat@portfolio:~$</span>
+                        <span class="terminal_username" data-typewriter="gurehmat@portfolio:~$"></span><span class="terminal_cursor" aria-hidden="true"></span>
                     </div>
                     <div class="terminal_body">
                         <p class="terminal_title">
@@ -90,20 +98,45 @@ CONTENT: Hello World - First Lab
                             <a href="./about.html" class="btn">[ ABOUT ME ]</a>
                         </div>
                         <div class="tech-stack">
-                            <div class="label">// TECH_STACK </div>
+                            <div class="label">// TECH_STACK</div>
                             <div class="tech_pills">
-                                <span class="pill pill--blue">[ PYTHON ]</span>
-                                <span class="pill pill--red">[ JS ]</span>
-                                <span class="pill pill--yellow">[ HTML/CSS ]</span>
-                                <span class="pill">[ GIT ]</span>
-                                <span class="pill">[ LINUX ]</span>
+                                <span class="pill pill--blue">[ REACT ]</span>
+                                <span class="pill">[ VITE ]</span>
+                                <span class="pill">[ TAILWIND ]</span>
+                                <span class="pill">[ SUPABASE ]</span>
+                                <span class="pill">[ ZUSTAND ]</span>
+                                <span class="pill pill--red">[ JAVASCRIPT ]</span>
+                                <span class="pill pill--yellow">[ HTML / CSS / SCSS ]</span>
+                                <span class="pill">[ GIT / GITHUB ]</span>
+                                <span class="pill">[ PYTHON ]</span>
                             </div>
                         </div>
                     </div>
                 </section>
             </div>
         </section>
-    
+
+        <section class="panel reveal">
+            <div class="panel_head">
+                <h2 class="h2">// EXPLORE</h2>
+                <p class="muted">Projects, about me, journal</p>
+            </div>
+            <div class="home_links">
+                <a href="./work.html" class="home_link_card card reveal reveal--stagger-1">
+                    <span class="home_link_label">WORK</span>
+                    <p class="home_link_text">Projects I’ve shipped. PantryCheff, SEED site, and more.</p>
+                </a>
+                <a href="./about.html" class="home_link_card card reveal reveal--stagger-2">
+                    <span class="home_link_label">ABOUT</span>
+                    <p class="home_link_text">Who I am, what I do, and the stack I use.</p>
+                </a>
+                <a href="./journal.html" class="home_link_card card reveal reveal--stagger-3">
+                    <span class="home_link_label">JOURNAL</span>
+                    <p class="home_link_text">Reflections on labs and what I’m learning.</p>
+                </a>
+            </div>
+        </section>
+
         <footer class="footer">
             <div class="footer_left">
                 <span class="muted">&copy; <span id="year">2026</span> Gurehmat C.</span>
@@ -115,7 +148,7 @@ CONTENT: Hello World - First Lab
 
     </main>
 
-
+    <script src="./js/main.js"></script>
 </body>
 
 </html>

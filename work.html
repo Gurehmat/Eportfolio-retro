@@ -7,6 +7,7 @@ CONTENT: Work / Projects
 
 <head>
     <meta charset="utf-8">
+    <script>(function(){var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');else if(window.matchMedia('(prefers-color-scheme:dark)').matches)document.documentElement.setAttribute('data-theme','dark');})();</script>
     <title>Work | Gurehmat C.</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Selected projects by Gurehmat C., including PantryCheff (AI recipe app) and SEED (Best UI at MillHacks). Live demos, stack, and contributions.">
@@ -30,9 +31,16 @@ CONTENT: Work / Projects
                 <a href="journal.html" class="nav_link">JOURNAL</a>
             </nav>
             <div class="topbar_actions">
-                <a class="icon-btn" href="https://github.com/Gurehmat" target="_blank" rel="noopener">GH</a>
-                <a class="icon-btn" href="https://www.linkedin.com/in/gurehmat-chahal-24696020b/" target="_blank" rel="noopener">IN</a>
-                <a class="icon-btn" href="mailto:chahag21@mcmaster.ca">EM</a>
+                <button type="button" class="icon-btn theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">[ DARK ]</button>
+                <a class="icon-btn icon-btn--logo" href="https://github.com/Gurehmat" target="_blank" rel="noopener" aria-label="GitHub">
+                    <img class="icon-logo" src="./images/github-pixelated.png" alt="GitHub">
+                </a>
+                <a class="icon-btn icon-btn--logo" href="https://www.linkedin.com/in/gurehmat-chahal-24696020b/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                    <img class="icon-logo" src="./images/linkedin-pixelated.png" alt="LinkedIn">
+                </a>
+                <a class="icon-btn icon-btn--logo" href="mailto:chahag21@mcmaster.ca" aria-label="Email">
+                    <img class="icon-logo" src="./images/email-pixelated.png" alt="Email">
+                </a>
             </div>
             <a class="btn btn--resume" href="resume.pdf" target="_blank" rel="noopener">[ RESUME ]</a>
         </div>
@@ -47,7 +55,7 @@ CONTENT: Work / Projects
 
             <div class="work_list">
                 <!-- Card 1: PantryCheff -->
-                <article class="card entry project_entry">
+                <article class="card entry project_entry reveal">
                     <header class="entry_header project_header">
                         <div class="project_terminal-left">
                             <span class="terminal_dots" aria-hidden="true">
@@ -55,7 +63,7 @@ CONTENT: Work / Projects
                                 <span class="terminal_dot terminal_dot--dim"></span>
                                 <span class="terminal_dot terminal_dot--dim"></span>
                             </span>
-                            <span class="project_prompt">pantrycheff@projects:~$</span>
+                            <span class="project_prompt">pantrycheff@projects:~$</span><span class="terminal_cursor" aria-hidden="true"></span>
                         </div>
                         <div class="project_meta-chips">
                             <span class="pill">[ 2026 ]</span>
@@ -119,7 +127,7 @@ CONTENT: Work / Projects
                 </article>
 
                 <!-- Card 2: SEED -->
-                <article class="card entry project_entry">
+                <article class="card entry project_entry reveal reveal--stagger-1">
                     <header class="entry_header project_header">
                         <div class="project_terminal-left">
                             <span class="terminal_dots" aria-hidden="true">
@@ -127,7 +135,7 @@ CONTENT: Work / Projects
                                 <span class="terminal_dot terminal_dot--dim"></span>
                                 <span class="terminal_dot terminal_dot--dim"></span>
                             </span>
-                            <span class="project_prompt">seed@projects:~$</span>
+                            <span class="project_prompt">seed@projects:~$</span><span class="terminal_cursor" aria-hidden="true"></span>
                         </div>
                         <div class="project_meta-chips">
                             <span class="pill">[ 2026 ]</span>
@@ -201,6 +209,7 @@ CONTENT: Work / Projects
         </footer>
     </main>
 
+    <script src="./js/main.js"></script>
 </body>
 
 </html>
