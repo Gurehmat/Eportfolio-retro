@@ -1,44 +1,75 @@
-## Eportfolio-retro
+# Eportfolio-retro
 
-Retro-styled personal portfolio site.
+A retro-styled personal portfolio site with a terminal-inspired aesthetic, dark/light mode, and subtle animations.
 
-- **Live site**: https://gurehmat.github.io/Eportfolio-retro/
+**Live site:** [gurehmat.github.io/Eportfolio-retro](https://gurehmat.github.io/Eportfolio-retro/)
 
-### Pages
+---
 
-- **Home** (`index.html`): hero + explore section + tech stack
-- **About** (`about.html`): childhood photo toggle (pixelated ↔ normal) + capabilities/tools
-- **Work** (`work.html`): project cards
-- **Journal** (`journal.html`): learning journal entries
+## Project structure
 
-### Features
+```
+Eportfolio-retro/
+├── index.html      # Home — hero, explore links, tech stack
+├── about.html      # About — bio, capabilities, childhood photo toggle
+├── work.html       # Work — project cards with thumbnails
+├── journal.html    # Journal — learning entries with pagination
+├── css/
+│   └── styles.css  # All styles (themes, layout, components)
+├── js/
+│   └── main.js     # Theme toggle, scroll reveal, typewriter, journal pagination
+├── assets/         # Images, resume PDF, icons
+└── README.md
+```
 
-- **Dark mode**: toggle in the top bar (persists via `localStorage`, defaults to system preference)
-- **Micro-animations**: hover states, subtle ambient motion, scroll reveals
-- **Typewriter prompt** (Home): terminal username types in on load
-- **Project header cursor** (Work): blinking cursor in each project “prompt”
-- **Image toggle** (About): click the childhood photo to switch versions
+---
 
-### Tech
+## Pages
 
-This is a static site built with:
+| Page    | Route        | Description |
+|---------|--------------|-------------|
+| **Home**    | `index.html` | Hero with avatar & terminal, explore section, tech pills |
+| **About**   | `about.html` | Childhood photo (click to toggle pixelated ↔ normal), capabilities, tools |
+| **Work**    | `work.html` | Project cards with thumbnails, stack, and links |
+| **Journal** | `journal.html` | Learning journal entries with prev/next pagination |
 
-- **HTML + CSS** (single stylesheet: `css/styles.css`)
-- **Vanilla JS** (shared script: `js/main.js`)
+---
 
-### Run locally
+## Features
 
-Any static server works. For example (VS Code):
+- **Dark / light mode** — Toggle in the top bar; choice is saved in `localStorage` and defaults to system preference.
+- **Micro-animations** — Hover lift on buttons and cards, gentle float on avatar/childhood photo, scroll-triggered reveals.
+- **Typewriter** (Home) — Terminal username types in on load (respects `prefers-reduced-motion`).
+- **Project cursor** (Work) — Blinking cursor in each project “prompt” bar.
+- **Image toggle** (About) — Click the childhood photo to switch between pixelated and normal versions.
+- **Journal pagination** — Previous/next controls when there are more than three entries.
 
-- Install “Live Server”
-- Right click `index.html` → **Open with Live Server**
+---
 
-Or open `index.html` directly in your browser (some features like fetch would require a server, but this site is static).
+## Tech stack
 
-### Customize
+- **HTML** — Semantic markup, no framework.
+- **CSS** — Single file (`css/styles.css`): CSS variables for theming, responsive breakpoints, reduced-motion support.
+- **JavaScript** — Vanilla JS in `js/main.js`; no build step.
 
-- **Styles**: `css/styles.css`
-- **Interactions (dark mode, reveals, typewriter)**: `js/main.js`
-- **Images**: `images/`
-- **Social links / icons**: top bar in each HTML page
+---
 
+## Run locally
+
+Use any static file server. Examples:
+
+- **VS Code:** Install the “Live Server” extension → right‑click `index.html` → **Open with Live Server**.
+- **CLI:** From the project root, run `npx serve .` or `python -m http.server 8000`, then open `http://localhost:8000` (or the port shown).
+
+You can also open `index.html` directly in the browser; all current features work without a server.
+
+---
+
+## Customization
+
+| What to change | Where |
+|----------------|--------|
+| **Colors, spacing, typography** | `css/styles.css` (`:root` and `[data-theme="dark"]` for dark mode) |
+| **Theme toggle, scroll reveal, typewriter, pagination** | `js/main.js` |
+| **Images and resume** | `assets/` (update paths in HTML if you rename files) |
+| **Nav links and social icons** | Top bar in each HTML file (`index.html`, `about.html`, `work.html`, `journal.html`) |
