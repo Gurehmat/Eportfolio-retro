@@ -65,4 +65,81 @@
       setTimeout(typeNext, 300);
     }
   }
+
+  // Journal pagination: flip through entries with arrows
+  document.addEventListener('DOMContentLoaded', function () {
+    var journalContainer = document.querySelector('.journal-entries[data-paged-journal]');
+    if (!journalContainer) return;
+
+    var entries = Array.prototype.slice.call(journalContainer.querySelectorAll('.entry'));
+    if (!entries.length) return;
+
+    var perPage = 3;
+    var totalPages = Math.ceil(entries.length / perPage);
+    var currentPage = 0;
+
+    var pagination = document.querySelector('.journal_pagination');
+    var indicator = pagination && pagination.querySelector('.journal_page-indicator');
+    var prevBtn = pagination && pagination.querySelector('[data-direction=\"prev\"]');
+    var nextBtn = pagination && pagination.querySelector('[data-direction=\"next\"]');
+
+    var isTransitioning = false;
+
+    function renderPage(page) {
+      if (page < 0) page = 0;
+      if (page > totalPages - 1) page = totalPages - 1;
+      currentPage = page;
+
+      entries.forEach(function (entry, index) {
+        var start = currentPage * perPage;
+        var end = start + perPage;
+        var visible = index >= start && index < end;
+        entry.style.display = visible ? '' : 'none';
+      });
+
+      if (indicator) {
+        indicator.textContent = 'Page ' + (currentPage + 1) + ' of ' + totalPages;
+      }
+      if (prevBtn) {
+        prevBtn.disabled = currentPage === 0;
+      }
+      if (nextBtn) {
+        nextBtn.disabled = currentPage === totalPages - 1;
+      }
+    }
+
+    function goTo(page) {
+      if (page === currentPage || isTransitioning) return;
+      if (!journalContainer.classList) {
+        renderPage(page);
+        return;
+      }
+      isTransitioning = true;
+      journalContainer.classList.add('is-paging');
+      setTimeout(function () {
+        renderPage(page);
+        journalContainer.classList.remove('is-paging');
+        isTransitioning = false;
+      }, 180);
+    }
+
+    if (pagination && totalPages > 1) {
+      if (prevBtn) {
+        prevBtn.addEventListener('click', function () {
+          goTo(currentPage - 1);
+        });
+      }
+      if (nextBtn) {
+        nextBtn.addEventListener('click', function () {
+          goTo(currentPage + 1);
+        });
+      }
+    } else if (pagination) {
+      // Hide pagination if there's only one page
+      pagination.style.display = 'none';
+    }
+
+    renderPage(0);
+  });
+
 })();
