@@ -2,7 +2,7 @@
 
 Retro-styled personal portfolio site.
 
-- **Live site**: `https://gurehmat.github.io/Eportfolio-retro/`
+- **Live site**: https://gurehmat.github.io/Eportfolio-retro/
 
 ### Pages
 
