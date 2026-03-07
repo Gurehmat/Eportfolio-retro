@@ -54,8 +54,8 @@ CONTENT: Work / Projects
             </div>
 
             <div class="work_list">
-                <!-- Card 1: PantryCheff -->
-                <article class="card entry project_entry reveal">
+                <!-- Card 1: PantryCheff (hero layout: full-width image, no sidebar) -->
+                <article class="card entry project_entry project_entry--hero reveal">
                     <header class="entry_header project_header">
                         <div class="project_terminal-left">
                             <span class="terminal_dots" aria-hidden="true">
@@ -72,64 +72,41 @@ CONTENT: Work / Projects
                         </div>
                     </header>
                     <div class="entry_body project_body">
-                        <div class="project_layout">
-                        <div class="project_dossier">
-                            <div class="project_thumb">
-                                <a href="https://gurehmat.github.io/PANTRYCHEFFV3/#/" class="project_media" target="_blank" rel="noopener" aria-label="PantryCheff live demo">
-                                    <img class="project_media--img" src="./assets/pantrycheff-use.png" alt="PantryCheff core screen: pantry scan and recipe match interface">
-                                </a>
-                            </div>
-                            <div class="dossier_panel dossier_outcome">
-                                <div class="dossier_panel_title">OUTCOME</div>
-                                <div class="dossier_outcome_lines">
-                                    <div><span class="dossier_k">STATUS</span><span class="dossier_v">Shipped</span></div>
-                                    <div><span class="dossier_k">SCOPE</span><span class="dossier_v">Full-stack SPA · AI integration · 154 tests</span></div>
-                                    <div><span class="dossier_k">FLOW</span><span class="dossier_v">Scan → Match → Generate → Cook</span></div>
+                        <div class="project_layout project_layout--hero">
+                            <!-- Hero image: full-width; optional: add data-video or data-gif for hover preview -->
+                            <a href="https://gurehmat.github.io/PANTRYCHEFFV3/#/" class="project_hero project_media" target="_blank" rel="noopener" aria-label="PantryCheff live demo">
+                                <img class="project_hero_img project_media--img" src="./assets/pantrycheff-use.png" alt="PantryCheff: pantry scan and recipe match interface">
+                            </a>
+                            <div class="project_content">
+                                <div class="project_title_row">
+                                    <h3 class="project_title">PantryCheff</h3>
+                                    <span class="project_badge project_badge--shipped">Shipped</span>
+                                </div>
+                                <p class="project_pitch">
+                                    AI-powered pantry + recipe engine that reduces food waste by cooking from what you already have. Multimodal fridge scanning, confidence-based recipe matching, and step-by-step Cook Mode.
+                                </p>
+                                <ul class="project_bullets">
+                                    <li><strong>Engineered</strong> a Set-based recipe matching algorithm with O(P+R) complexity and confidence scoring (exact, partial, fuzzy), covered by 51 unit tests.</li>
+                                    <li><strong>Built</strong> a multimodal AI pipeline: fridge photo → Supabase Edge Function → Gemini Vision → validated ingredient list added to pantry.</li>
+                                    <li><strong>Optimized</strong> the main bundle by 99.8% (3,572KB → 8KB) with code splitting, lazy loading, and response caching.</li>
+                                </ul>
+                                <div class="project_stack-row">
+                                    <div class="project_stack">
+                                        <span class="pill">[ REACT 19 ]</span>
+                                        <span class="pill">[ TYPESCRIPT ]</span>
+                                        <span class="pill">[ SUPABASE ]</span>
+                                        <span class="pill">[ POSTGRES ]</span>
+                                        <span class="pill">[ EDGE FUNCTIONS ]</span>
+                                        <span class="pill pill--blue">[ GEMINI API ]</span>
+                                        <span class="pill">[ TAILWIND ]</span>
+                                    </div>
+                                </div>
+                                <div class="project_actions">
+                                    <a href="https://gurehmat.github.io/PANTRYCHEFFV3/#/" class="btn btn--primary" target="_blank" rel="noopener">[ LIVE DEMO ]</a>
+                                    <a href="https://github.com/Gurehmat/PANTRYCHEFFV3" class="btn btn--ghost" target="_blank" rel="noopener">[ SOURCE ]</a>
                                 </div>
                             </div>
-                            <div class="dossier_panel dossier_highlights">
-                                <div class="dossier_panel_title">HIGHLIGHTS</div>
-                                <p class="dossier_highlights_text">O(P+R) matching algorithm with confidence scoring; multimodal AI pipeline (Gemini Vision); 154 tests, strict TypeScript, CI/CD; 99.8% bundle size reduction; Cook Mode + expiry alerts.</p>
-                            </div>
                         </div>
-                        <div class="project_content">
-                            <h3 class="project_title">PantryCheff</h3>
-                            <p class="project_pitch">
-                                AI-powered pantry + recipe engine that reduces food waste by cooking from what you already have. Features multimodal AI fridge scanning, confidence-based recipe matching, personalized recipe generation, step-by-step Cook Mode, and expiry tracking.
-                            </p>
-                            <ul class="project_bullets">
-                                <li><strong>Engineered</strong> a Set-based recipe matching algorithm with O(P+R) complexity and confidence scoring (exact, partial, fuzzy), covered by 51 unit tests.</li>
-                                <li><strong>Built</strong> a multimodal AI pipeline: fridge photo → Supabase Edge Function → Gemini Vision → validated, structured ingredient list added to pantry.</li>
-                                <li><strong>Implemented</strong> 154 automated tests, strict TypeScript, CI/CD via GitHub Actions, and pre-commit hooks with ESLint + Prettier + Husky.</li>
-                                <li><strong>Optimized</strong> performance with route-level code splitting, lazy loading, React.memo, and response caching — reducing the largest bundle chunk by 99.8% (3,572KB → 8KB).</li>
-                                <li><strong>Secured</strong> the application with Row-Level Security on all Postgres tables, server-side API key isolation via Edge Functions, and client-side rate limiting.</li>
-                                <li><strong>Designed</strong> Cook Mode (step-by-step cooking UI), expiry alerts (color-coded warnings), and a dashboard with real-time pantry statistics.</li>
-                            </ul>
-                            <p class="project_arch">
-                                <span class="meta_k">Architecture:</span> React 19 SPA → Supabase (Auth, Postgres, Edge Functions) → Gemini API for vision and recipe generation.
-                            </p>
-                            <div class="project_stack-row">
-                                <div class="project_stack">
-                                    <span class="pill">[ REACT 19 ]</span>
-                                    <span class="pill">[ TYPESCRIPT ]</span>
-                                    <span class="pill">[ VITE ]</span>
-                                    <span class="pill">[ TAILWIND ]</span>
-                                    <span class="pill">[ ZUSTAND ]</span>
-                                    <span class="pill">[ SUPABASE ]</span>
-                                    <span class="pill">[ POSTGRES ]</span>
-                                    <span class="pill">[ EDGE FUNCTIONS ]</span>
-                                    <span class="pill pill--blue">[ GEMINI API ]</span>
-                                    <span class="pill">[ VITEST ]</span>
-                                    <span class="pill">[ GITHUB ACTIONS ]</span>
-                                    <span class="pill">[ ESLINT ]</span>
-                                </div>
-                            </div>
-                            <div class="project_actions">
-                                <a href="https://gurehmat.github.io/PANTRYCHEFFV3/#/" class="btn btn--primary" target="_blank" rel="noopener">[ LIVE DEMO ]</a>
-                                <a href="https://github.com/Gurehmat/PANTRYCHEFFV3" class="btn btn--ghost" target="_blank" rel="noopener">[ SOURCE ]</a>
-                            </div>
-                        </div>
-                    </div>
                     </div>
                 </article>
 
