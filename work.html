@@ -10,7 +10,7 @@ CONTENT: Work / Projects
     <script>(function(){var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');else if(window.matchMedia('(prefers-color-scheme:dark)').matches)document.documentElement.setAttribute('data-theme','dark');})();</script>
     <title>Gurehmat C. | Work | Projects · PantryCheff, SEED</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Projects by Gurehmat C. — PantryCheff (AI-powered full-stack pantry + recipe app), SEED (Best UI at MillHacks), React, TypeScript, Supabase, testing, CI/CD. Live demos and source code.">
+    <meta name="description" content="Projects by Gurehmat C. — PantryCheff (AI-powered full-stack pantry + recipe app) and SEED. React, TypeScript, Supabase, Zustand, Tailwind, Vitest/RTL/MSW, GitHub Actions, and AI via Gemini.">
     <link rel="canonical" href="https://gurehmat.dev/work.html">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://gurehmat.dev/work.html">
@@ -77,8 +77,8 @@ CONTENT: Work / Projects
                         </div>
                         <div class="project_meta-chips">
                             <span class="pill">[ 2026 ]</span>
-                            <span class="pill">[ full-stack ]</span>
-                            <span class="pill">[ ai ]</span>
+                            <span class="pill">[ REACT + TYPESCRIPT ]</span>
+                            <span class="pill">[ SUPABASE / GEMINI ]</span>
                         </div>
                     </header>
                     <div class="entry_body project_body">
@@ -92,11 +92,12 @@ CONTENT: Work / Projects
                                     <span class="project_badge project_badge--shipped">[ SHIPPED ]</span>
                                 </div>
                                 <p class="project_pitch">
-                                    AI-powered pantry + recipe engine that reduces food waste by cooking from what you already have. Multimodal fridge scanning, confidence-based recipe matching, and step-by-step Cook Mode.
+                                    AI-powered pantry + recipe engine that reduces food waste by cooking from what you already have. Built with React, TypeScript, Supabase (Postgres, Auth, Edge Functions), and Gemini for multimodal fridge scanning.
                                 </p>
                                 <ul class="project_bullets">
-                                    <li><strong>Engineered</strong> a Set-based recipe matching algorithm with O(P+R) complexity and confidence scoring (exact, partial, fuzzy), covered by 51 unit tests.</li>
-                                    <li><strong>Built</strong> a multimodal AI pipeline: fridge photo → Supabase Edge Function → Gemini Vision → validated ingredient list added to pantry.</li>
+                                    <li><strong>Engineered</strong> a Set-based recipe matching algorithm with O(P+R) complexity and confidence scoring (exact, partial, fuzzy), covered by targeted unit tests.</li>
+                                    <li><strong>Built</strong> a multimodal AI pipeline: fridge photo → Supabase Edge Function → Gemini Vision → validated ingredient list added to a type-safe pantry store.</li>
+                                    <li><strong>Implemented</strong> strict TypeScript + Zustand state management, with 154 tests (Vitest, React Testing Library, MSW) running in GitHub Actions CI.</li>
                                     <li><strong>Optimized</strong> the main bundle by 99.8% (3,572KB → 8KB) with code splitting, lazy loading, and response caching.</li>
                                 </ul>
                                 <div class="project_stack-row">
@@ -108,6 +109,11 @@ CONTENT: Work / Projects
                                         <span class="pill">[ EDGE FUNCTIONS ]</span>
                                         <span class="pill pill--blue">[ GEMINI API ]</span>
                                         <span class="pill">[ TAILWIND ]</span>
+                                        <span class="pill">[ ZUSTAND ]</span>
+                                        <span class="pill">[ VITEST ]</span>
+                                        <span class="pill">[ REACT TESTING LIBRARY ]</span>
+                                        <span class="pill">[ MSW ]</span>
+                                        <span class="pill">[ GITHUB ACTIONS ]</span>
                                     </div>
                                 </div>
                                 <div class="project_actions">
