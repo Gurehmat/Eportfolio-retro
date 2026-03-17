@@ -79,14 +79,18 @@ CONTENT: Resume viewer / share-friendly page
                     <div style="display:flex; gap:10px; flex-wrap:wrap;">
                         <a class="btn btn--primary" href="./assets/Resume_3-4-2026.pdf" download>[ DOWNLOAD ]</a>
                         <a class="btn" href="./assets/Resume_3-4-2026.pdf" target="_blank" rel="noopener">[ OPEN IN NEW TAB ]</a>
+                        <button type="button" class="btn" data-resume-embed-button>[ VIEW IN PAGE ]</button>
                     </div>
                 </div>
 
-                <iframe
-                    title="Gurehmat C. Resume PDF"
-                    src="./assets/Resume_3-4-2026.pdf#view=FitH"
-                    style="width:100%; height:min(82vh, 920px); border: 1px solid rgba(182,255,122,0.18); border-radius: 12px; background: rgba(0,0,0,0.08);"
-                ></iframe>
+                <div
+                    data-resume-embed
+                    style="width:100%; height:min(82vh, 920px); border: 1px solid rgba(182,255,122,0.18); border-radius: 12px; background: rgba(0,0,0,0.08); display:flex; align-items:center; justify-content:center; padding: 14px;"
+                >
+                    <p class="muted" style="margin:0; font-size: 14px;">
+                        Click <strong>[ VIEW IN PAGE ]</strong> to load the embedded PDF.
+                    </p>
+                </div>
 
                 <p class="muted" style="margin-top:12px; font-size: 14px;">
                     If the embed doesn’t load in your browser, use
