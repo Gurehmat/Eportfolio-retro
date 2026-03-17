@@ -1,0 +1,112 @@
+<!doctype html>
+<!--
+AUTHOR: Gurehmat
+CONTENT: Resume viewer / share-friendly page
+-->
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <script>(function(){var t=localStorage.getItem('theme');if(t==='dark')document.documentElement.setAttribute('data-theme','dark');else if(t==='light')document.documentElement.setAttribute('data-theme','light');else if(window.matchMedia('(prefers-color-scheme:dark)').matches)document.documentElement.setAttribute('data-theme','dark');})();</script>
+    <title>Gurehmat C. | Resume</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resume — Gurehmat C., Computer Science student at McMaster University. Full-stack developer (React, TypeScript, Supabase).">
+    <link rel="canonical" href="https://gurehmat.dev/resume.html">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gurehmat.dev/resume.html">
+    <meta property="og:title" content="Gurehmat C. | Resume">
+    <meta property="og:description" content="Resume — Gurehmat C., Computer Science student at McMaster University.">
+    <meta property="og:image" content="https://gurehmat.dev/assets/Gurehmat_avatar.png">
+    <meta property="og:site_name" content="Gurehmat C. Portfolio">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gurehmat C. | Resume">
+    <meta name="twitter:description" content="Resume — Gurehmat C., Computer Science student at McMaster University.">
+    <meta name="twitter:image" content="https://gurehmat.dev/assets/Gurehmat_avatar.png">
+
+    <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="./assets/Gurehmat_avatar.png" type="image/png">
+    <link rel="apple-touch-icon" href="./assets/Gurehmat_avatar.png">
+    <link rel="manifest" href="./site.webmanifest">
+    <meta name="theme-color" content="#0b0f14">
+
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://kit.fontawesome.com/18ac903506.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="topbar">
+            <div class="brand">
+                <span class="brand_name">
+                    GUREHMAT C.
+                </span>
+            </div>
+
+            <nav class="nav">
+                <a href="index.html" class="nav_link">HOME</a>
+                <a href="about.html" class="nav_link">ABOUT</a>
+                <a href="work.html" class="nav_link">WORK</a>
+                <a href="journal.html" class="nav_link">JOURNAL</a>
+            </nav>
+            <div class="topbar_actions">
+                <button type="button" class="icon-btn theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">[ DARK ]</button>
+                <a class="icon-btn icon-btn--logo" href="https://github.com/Gurehmat" target="_blank" rel="noopener" aria-label="GitHub" data-label="GitHub" title="GitHub">
+                    <img class="icon-logo" src="./assets/github-pixelated.png" alt="GitHub">
+                </a>
+                <a class="icon-btn icon-btn--logo" href="https://www.linkedin.com/in/gurehmat-chahal-24696020b/" target="_blank" rel="noopener" aria-label="LinkedIn" data-label="LinkedIn" title="LinkedIn">
+                    <img class="icon-logo" src="./assets/linkedin-pixelated.png" alt="LinkedIn">
+                </a>
+                <a class="icon-btn icon-btn--logo" href="mailto:gurehmat9@gmail.com" aria-label="Email" data-label="Email" title="Email">
+                    <img class="icon-logo" src="./assets/email-pixelated.png" alt="Email">
+                </a>
+            </div>
+            <a class="btn btn--resume" href="./assets/Resume_3-4-2026.pdf" target="_blank" rel="noopener">[ OPEN PDF ]</a>
+        </div>
+    </header>
+
+    <main id="main" class="container">
+        <section class="panel">
+            <div class="panel_head">
+                <h2 class="h2">RESUME</h2>
+                <p class="muted">Open in-page, download, or share this URL</p>
+            </div>
+
+            <div class="card" style="padding: 16px;">
+                <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:space-between; margin-bottom:12px;">
+                    <div class="muted" style="font-size: 14px;">File: <strong>Resume_3-4-2026.pdf</strong></div>
+                    <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                        <a class="btn btn--primary" href="./assets/Resume_3-4-2026.pdf" download>[ DOWNLOAD ]</a>
+                        <a class="btn" href="./assets/Resume_3-4-2026.pdf" target="_blank" rel="noopener">[ OPEN IN NEW TAB ]</a>
+                    </div>
+                </div>
+
+                <iframe
+                    title="Gurehmat C. Resume PDF"
+                    src="./assets/Resume_3-4-2026.pdf#view=FitH"
+                    style="width:100%; height:min(82vh, 920px); border: 1px solid rgba(182,255,122,0.18); border-radius: 12px; background: rgba(0,0,0,0.08);"
+                ></iframe>
+
+                <p class="muted" style="margin-top:12px; font-size: 14px;">
+                    If the embed doesn’t load in your browser, use
+                    <a href="./assets/Resume_3-4-2026.pdf" target="_blank" rel="noopener">this direct PDF link</a>.
+                </p>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer_left">
+                <span class="muted">&copy; <span id="year">2026</span> Gurehmat C.</span>
+            </div>
+            <div class="footer_right">
+                <span class="muted">Built by Gurehmat C. | Dark mode + animations | Let's connect </span>
+            </div>
+        </footer>
+    </main>
+
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
+
