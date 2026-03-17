@@ -1092,6 +1092,36 @@ button.icon-btn {
 
 }
 
+/* Mid breakpoint: prevent navbar break between ~760-1030px */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .topbar {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-areas:
+            "brand actions"
+            "nav nav"
+            "resume resume"
+        ;
+        align-items: start;
+        gap: 0.75rem;
+    }
+
+    .brand { grid-area: brand; }
+    .topbar_actions { grid-area: actions; margin-left: 0; }
+
+    .nav {
+        grid-area: nav;
+        flex-wrap: wrap;
+        margin-left: 0;
+    }
+
+    .btn--resume {
+        grid-area: resume;
+        width: 100%;
+        text-align: center;
+    }
+}
+
 
 @media (max-width: 479px) {
     

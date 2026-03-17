@@ -142,4 +142,26 @@
     renderPage(0);
   });
 
+  // Resume embed: lazy-load PDF to avoid browser zoom quirks
+  document.addEventListener('DOMContentLoaded', function () {
+    var mount = document.querySelector('[data-resume-embed]');
+    if (!mount) return;
+
+    var btn = document.querySelector('[data-resume-embed-button]');
+    if (!btn) return;
+
+    var loaded = false;
+    function loadEmbed() {
+      if (loaded) return;
+      loaded = true;
+      mount.innerHTML =
+        '<iframe title="Gurehmat C. Resume PDF" ' +
+        'src="./assets/Resume_3-4-2026.pdf#view=FitH" ' +
+        'style="width:100%; height:100%; border: 0; border-radius: 12px; background: rgba(0,0,0,0.08);" ' +
+        'loading="lazy"></iframe>';
+    }
+
+    btn.addEventListener('click', loadEmbed);
+  });
+
 })();
