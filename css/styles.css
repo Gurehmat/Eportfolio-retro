@@ -54,6 +54,11 @@ html,body {
     height:100%; 
 }
 
+html{
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
 body {
     margin:0;
     background:var(--bg);
@@ -90,6 +95,11 @@ a {
 
 a:hover {
     text-decoration: none;
+}
+
+/* Prevent mobile double-tap zoom quirks on tappable UI */
+a, button, .btn, .icon-btn {
+    touch-action: manipulation;
 }
 
 img {
