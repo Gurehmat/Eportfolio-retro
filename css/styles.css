@@ -24,6 +24,7 @@
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
   --motion-duration: 0.35s;
+  --header-control-min-height: 50px;
 }
 
 [data-theme="dark"] {
@@ -152,7 +153,6 @@ img {
 .nav {
     display: flex;
     gap: 0.625rem;
-    margin-left: 0.5rem;
 }
 
 .nav_link {
@@ -270,6 +270,10 @@ button.icon-btn {
 .btn--resume {
     background: var(--red);
     color: var(--ink);
+}
+
+.btn--resume-text--short {
+    display: none;
 }
 
 .btn--primary {
@@ -782,8 +786,14 @@ button.icon-btn {
     gap: var(--gap-24);
 }
 
-.project_entry .entry_header{
+.project_entry .entry_header {
     gap: var(--gap-16);
+    min-width: 0;
+}
+
+.project_entry {
+    min-width: 0;
+    max-width: 100%;
 }
 
 .project_terminal-left{
@@ -829,11 +839,21 @@ button.icon-btn {
     white-space: nowrap;
 }
 
- .project_meta-chips {
+.project_meta-chips {
     display: flex;
     flex-wrap: wrap;
     gap: var(--gap-8);
     justify-content: flex-end;
+    min-width: 0;
+    flex: 1 1 auto;
+}
+
+.project_meta-chips .pill,
+.project_stack .pill {
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 /* Universal project card layout: hero image + single-column content (all cards) */
@@ -980,6 +1000,321 @@ button.icon-btn {
     font-weight: 900;
 }
 
+/* ≤768px: mobile header — row2 nav | actions, row3 full-width resume */
+@media (max-width: 768px) {
+
+    .topbar .nav {
+        grid-area: nav;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        gap: 0.5rem;
+        width: 100%;
+        min-width: 0;
+        margin: 0;
+    }
+
+    .topbar > .btn--resume {
+        grid-area: resume;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        text-align: center;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    .nav_link {
+        text-align: center;
+        min-width: 0;
+        width: 100%;
+        padding: 0.5rem 0.5rem;
+        font-size: 0.8125rem;
+    }
+
+    .topbar {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        grid-template-areas:
+            "brand brand"
+            "nav actions"
+            "resume resume";
+        align-items: start;
+        gap: 0.65rem;
+        min-width: 0;
+    }
+
+    .brand {
+        grid-area: brand;
+        width: auto;
+        min-width: 0;
+        align-self: center;
+        padding-block: 0.2rem;
+    }
+
+    .topbar_actions {
+        grid-area: actions;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        width: auto;
+        max-width: min(100%, 11rem);
+        min-width: 0;
+        justify-content: flex-end;
+        align-content: flex-start;
+        margin-left: 0;
+    }
+
+    .topbar_actions .icon-btn {
+        justify-self: end;
+    }
+
+    .topbar .theme-toggle {
+        padding: 0.45rem 0.55rem;
+        font-size: 0.8125rem;
+    }
+
+    .topbar_actions .icon-btn.icon-btn--logo {
+        width: 44px;
+        height: 44px;
+        padding: 0.32rem;
+    }
+
+    .panel_head {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .avatar_card .card_media {
+        padding: 0.625rem;
+    }
+
+    .hero_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .journal_layout {
+        grid-template-columns: 1fr;
+    }
+
+    .journal_layout .journal-list,
+    .journal_layout .journal-entries,
+    .journal_layout .journal_pagination {
+        grid-column: 1;
+    }
+
+    .journal_layout .journal-list {
+        grid-row: auto;
+    }
+
+    .journal-list {
+        position: static;
+        top: auto;
+    }
+
+    .home_links {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ≤768px: page content — buttons, pills, journal controls (site-wide) */
+@media (max-width: 768px) {
+    main .btn,
+    .container .btn {
+        padding: 0.5rem 0.65rem;
+        font-size: 0.8125rem;
+    }
+
+    .call_to_action .btn {
+        padding: 0.5rem 0.65rem;
+        font-size: 0.8125rem;
+    }
+
+    .entry-link {
+        padding: 0.5rem 0.65rem;
+        font-size: 0.8125rem;
+    }
+
+    .journal_page-btn {
+        min-width: 3rem;
+        padding: 0.35rem 0.5rem;
+        font-size: 0.78rem;
+    }
+
+    .journal_page-indicator {
+        font-size: 11px;
+    }
+
+    .tech_pills .pill,
+    .proof_strip .pill {
+        padding: 5px 6px;
+        font-size: 0.75rem;
+    }
+
+    .home_link_card {
+        padding: 0.85rem;
+    }
+}
+
+/* Under 760px: stack full-width rows */
+@media (max-width: 760px) {
+    .topbar {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "brand"
+            "nav"
+            "resume"
+            "actions";
+        gap: 0.5rem;
+    }
+
+    .topbar_actions {
+        max-width: 100%;
+        justify-content: flex-start;
+        align-items: center;
+    }
+}
+
+/* Mid: brand+actions row, then full-width nav row, then full-width resume */
+@media (min-width: 769px) and (max-width: 1280px) {
+    .topbar {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-template-areas:
+            "brand actions"
+            "nav nav"
+            "resume resume";
+        align-items: start;
+        gap: 0.75rem;
+    }
+
+    .brand {
+        grid-area: brand;
+        align-self: center;
+    }
+
+    .topbar_actions {
+        grid-area: actions;
+        margin-left: 0;
+        align-self: center;
+    }
+
+    .topbar .nav {
+        grid-area: nav;
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        width: 100%;
+        gap: 0.625rem;
+        margin: 0;
+    }
+
+    .nav_link {
+        text-align: center;
+        min-width: 0;
+        width: 100%;
+    }
+
+    .topbar > .btn--resume {
+        grid-area: resume;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Wide: single flex row — DOM order: brand, nav, actions, resume */
+@media (min-width: 1281px) {
+    .topbar {
+        align-items: center;
+        padding: 0.625rem 0.875rem;
+    }
+
+    .brand_name {
+        white-space: nowrap;
+    }
+
+    .nav_link,
+    .topbar .theme-toggle,
+    .topbar .btn--resume {
+        min-height: var(--header-control-min-height);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+}
+
+/* Work page: stack terminal row, wrap pills, scale actions — fits narrow cards */
+@media (max-width: 768px) {
+    .project_entry .entry_header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.65rem;
+        padding: 0.65rem 0.75rem;
+    }
+
+    .project_terminal-left {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .project_prompt {
+        white-space: normal;
+        overflow: visible;
+        text-overflow: unset;
+    }
+
+    .project_meta-chips {
+        width: 100%;
+        justify-content: flex-start;
+        gap: 0.35rem;
+    }
+
+    .project_meta-chips .pill,
+    .project_stack .pill {
+        padding: 0.4rem 0.45rem;
+        font-size: clamp(0.62rem, 2.6vw, 0.8125rem);
+        line-height: 1.3;
+    }
+
+    .project_content {
+        padding: var(--gap-16);
+        gap: var(--gap-16);
+        font-size: 15px;
+    }
+
+    .project_title {
+        font-size: clamp(1.2rem, 4vw, 1.45rem);
+    }
+
+    .project_badge {
+        font-size: 10px;
+        padding: 3px 8px;
+    }
+
+    .project_pitch {
+        font-size: 15px;
+    }
+
+    .project_bullets {
+        font-size: 14px;
+    }
+
+    .project_actions {
+        gap: 0.5rem;
+    }
+
+    .project_actions .btn {
+        padding: 0.5rem 0.65rem;
+        font-size: 0.8125rem;
+    }
+}
+
 @media (max-width: 479px) {
     .project_content {
         padding: var(--gap-16);
@@ -989,213 +1324,19 @@ button.icon-btn {
         gap: var(--gap-8);
     }
 
-    .project_title {
-        font-size: 22px;
-    }
-}
-
-@media (min-width: 480px) and (max-width: 768px) {
-
-    .nav {
-        display: grid;
-        grid-area: nav;
-        width: auto;
-        grid-template-columns: 1fr 1fr;
-        flex-wrap: wrap;
-        gap: 0.625rem;
-        margin-left: 0px; 
-    }
-
-    .nav_link {
-        text-align: center;
-        min-width: 0;
-        width: 100%;
-    }
-
-    .topbar {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        grid-template-areas:
-            "brand brand"
-            "nav actions"
-            "resume resume"
-        ;
-        align-items: start;
-        gap: 0.75rem;
-    }
-
-    .topbar_actions{
-        grid-area: actions;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        width: auto;
-        justify-content: end;
-        margin-left: 0;
-    }
-
-    .btn--resume{
-        grid-area: resume;
-        width: 100%;
-        text-align: center;
-    }
-
-    .topbar_actions .icon-btn {
-        justify-self: end;
-    }
-
-    .panel_head {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .footer {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .avatar_card .card_media{
-        padding: 0.625rem;
-    }
-
-    .hero_grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .journal_layout {
-        grid-template-columns: 1fr;
-    }
-
-    .journal_layout .journal-list,
-    .journal_layout .journal-entries,
-    .journal_layout .journal_pagination {
-        grid-column: 1;
-    }
-
-    .journal_layout .journal-list {
-        grid-row: auto;
-    }
-
-    .journal-list {
-        position: static;
-        top: auto;
-    }
-
-    .brand {
-        grid-area: brand;
-        width: auto;
-    }
-
-    .home_links {
-        grid-template-columns: 1fr;
-    }
-
-}
-
-/* Mid breakpoint: prevent navbar break between ~760-1030px */
-@media (min-width: 769px) and (max-width: 1024px) {
-    .topbar {
-        display: grid;
-        grid-template-columns: 1fr auto;
-        grid-template-areas:
-            "brand actions"
-            "nav nav"
-            "resume resume"
-        ;
-        align-items: start;
-        gap: 0.75rem;
-    }
-
-    .brand { grid-area: brand; }
-    .topbar_actions { grid-area: actions; margin-left: 0; }
-
-    .nav {
-        grid-area: nav;
-        flex-wrap: wrap;
-        margin-left: 0;
-    }
-
-    .btn--resume {
-        grid-area: resume;
-        width: 100%;
-        text-align: center;
-    }
-}
-
-
-@media (max-width: 479px) {
-    
-    .topbar {
-        flex-wrap: wrap;
-    }
-
-    .brand {
-        width: 100%;
-    }
-
-    .nav {
-        width: 100%;
-        flex-wrap: wrap;
-        margin-left: 0;
-    }
-
-    .topbar_actions {
-        width: 100%;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        margin-left: 0;
-    }
-
-    .hero_grid {
-        grid-template-columns: 1fr;
-    }
-
-    .journal_layout {
-        grid-template-columns: 1fr;
-    }
-
-    .journal_layout .journal-list,
-    .journal_layout .journal-entries,
-    .journal_layout .journal_pagination {
-        grid-column: 1;
-    }
-
-    .journal_layout .journal-list {
-        grid-row: auto;
-    }
-
-    .journal-list {
-        position: static;
-        top: auto;
-    }
-
-    .panel_head {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    
-    .footer {
-        flex-direction: column;
-        align-items: flex-start;
-
-    }
-
-    .avatar_card .card_media {
-        padding: 0.625rem;
-    }
-
-    .home_links {
-        grid-template-columns: 1fr;
-    }
-
-    .project_entry .entry_header{
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+    .project_entry .entry_header {
+        padding: 0.55rem 0.65rem;
+        gap: 0.5rem;
     }
 
     .project_meta-chips {
         justify-content: flex-start;
+    }
+
+    .project_meta-chips .pill,
+    .project_stack .pill {
+        padding: 0.32rem 0.38rem;
+        font-size: 0.65rem;
     }
 
     .project_title {
@@ -1213,6 +1354,41 @@ button.icon-btn {
     .project_actions .btn {
         width: 100%;
         text-align: center;
+        padding: 0.45rem 0.55rem;
+        font-size: 0.75rem;
+    }
+
+    main .btn,
+    .container .btn {
+        padding: 0.45rem 0.55rem;
+        font-size: 0.75rem;
+    }
+
+    .call_to_action .btn {
+        padding: 0.45rem 0.55rem;
+        font-size: 0.75rem;
+    }
+
+    .entry-link {
+        padding: 0.45rem 0.55rem;
+        font-size: 0.75rem;
+    }
+
+    .journal_page-btn {
+        padding: 0.3rem 0.45rem;
+        font-size: 0.72rem;
+        min-width: 2.75rem;
+    }
+
+    .tech_pills .pill,
+    .proof_strip .pill {
+        padding: 4px 5px;
+        font-size: 0.7rem;
+    }
+
+    .topbar .theme-toggle {
+        padding: 0.4rem 0.5rem;
+        font-size: 0.75rem;
     }
 
     .icon-btn.icon-btn--logo {
@@ -1221,6 +1397,102 @@ button.icon-btn {
         padding: 0.35rem;
     }
 
+    .nav_link {
+        padding: 0.45rem 0.45rem;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .topbar {
+        padding: 0.4rem 0.45rem;
+        gap: 0.45rem;
+    }
+
+    .topbar .nav {
+        gap: 0.35rem;
+    }
+
+    .btn--resume-text--full {
+        display: none;
+    }
+
+    .btn--resume-text--short {
+        display: inline;
+    }
+
+    .topbar_actions {
+        gap: 0.35rem;
+    }
+
+    .topbar .theme-toggle {
+        padding: 0.35rem 0.45rem;
+        font-size: 0.7rem;
+        line-height: 1.2;
+    }
+
+    .icon-btn.icon-btn--logo {
+        width: 36px;
+        height: 36px;
+        padding: 0.25rem;
+    }
+
+    .nav_link {
+        padding: 0.35rem 0.25rem;
+        font-size: 0.7rem;
+    }
+
+    .topbar > .btn--resume {
+        padding: 0.35rem 0.3rem;
+        font-size: 0.7rem;
+    }
+
+    .project_meta-chips .pill,
+    .project_stack .pill {
+        padding: 0.28rem 0.32rem;
+        font-size: 0.6rem;
+    }
+
+    .project_actions .btn {
+        padding: 0.4rem 0.45rem;
+        font-size: 0.7rem;
+    }
+
+    main .btn,
+    .container .btn {
+        padding: 0.4rem 0.45rem;
+        font-size: 0.7rem;
+    }
+
+    .call_to_action .btn {
+        padding: 0.4rem 0.45rem;
+        font-size: 0.7rem;
+    }
+
+    .entry-link {
+        padding: 0.38rem 0.42rem;
+        font-size: 0.68rem;
+    }
+
+    .journal_page-btn {
+        padding: 0.28rem 0.38rem;
+        font-size: 0.65rem;
+        min-width: 2.5rem;
+    }
+
+    .journal_page-indicator {
+        font-size: 10px;
+    }
+
+    .tech_pills .pill,
+    .proof_strip .pill {
+        padding: 3px 4px;
+        font-size: 0.62rem;
+    }
+
+    .home_link_card {
+        padding: 0.75rem;
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {
