@@ -66,102 +66,72 @@
     }
   }
 
-  // Journal pagination: flip through entries with arrows
+  // Nav scroll-spy: update is-active on the nav link matching the visible section
   document.addEventListener('DOMContentLoaded', function () {
-    var journalContainer = document.querySelector('.journal-entries[data-paged-journal]');
-    if (!journalContainer) return;
-
-    var entries = Array.prototype.slice.call(journalContainer.querySelectorAll('.entry'));
-    if (!entries.length) return;
-
-    var perPage = 3;
-    var totalPages = Math.ceil(entries.length / perPage);
-    var currentPage = 0;
-
-    var pagination = document.querySelector('.journal_pagination');
-    var indicator = pagination && pagination.querySelector('.journal_page-indicator');
-    var prevBtn = pagination && pagination.querySelector('[data-direction=\"prev\"]');
-    var nextBtn = pagination && pagination.querySelector('[data-direction=\"next\"]');
-
-    var isTransitioning = false;
-
-    function renderPage(page) {
-      if (page < 0) page = 0;
-      if (page > totalPages - 1) page = totalPages - 1;
-      currentPage = page;
-
-      entries.forEach(function (entry, index) {
-        var start = currentPage * perPage;
-        var end = start + perPage;
-        var visible = index >= start && index < end;
-        entry.style.display = visible ? '' : 'none';
+    var sections = document.querySelectorAll('section[id]');
+    var navLinks = document.querySelectorAll('.nav_link[data-nav-target]');
+    if (!sections.length || !navLinks.length || !('IntersectionObserver' in window)) return;
+    var navObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var id = entry.target.getAttribute('id');
+        navLinks.forEach(function (link) {
+          link.classList.toggle('is-active', link.getAttribute('data-nav-target') === id);
+        });
       });
-
-      if (indicator) {
-        indicator.textContent = 'Page ' + (currentPage + 1) + ' of ' + totalPages;
-      }
-      if (prevBtn) {
-        prevBtn.disabled = currentPage === 0;
-      }
-      if (nextBtn) {
-        nextBtn.disabled = currentPage === totalPages - 1;
-      }
-    }
-
-    function goTo(page) {
-      if (page === currentPage || isTransitioning) return;
-      if (!journalContainer.classList) {
-        renderPage(page);
-        return;
-      }
-      isTransitioning = true;
-      journalContainer.classList.add('is-paging');
-      setTimeout(function () {
-        renderPage(page);
-        journalContainer.classList.remove('is-paging');
-        isTransitioning = false;
-      }, 180);
-    }
-
-    if (pagination && totalPages > 1) {
-      if (prevBtn) {
-        prevBtn.addEventListener('click', function () {
-          goTo(currentPage - 1);
-        });
-      }
-      if (nextBtn) {
-        nextBtn.addEventListener('click', function () {
-          goTo(currentPage + 1);
-        });
-      }
-    } else if (pagination) {
-      // Hide pagination if there's only one page
-      pagination.style.display = 'none';
-    }
-
-    renderPage(0);
+    }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+    sections.forEach(function (s) { navObserver.observe(s); });
   });
 
-  // Resume embed: lazy-load PDF to avoid browser zoom quirks
+  // Project modal: open on card click, close on back/backdrop/Escape, scroll lock
   document.addEventListener('DOMContentLoaded', function () {
-    var mount = document.querySelector('[data-resume-embed]');
-    if (!mount) return;
-
-    var btn = document.querySelector('[data-resume-embed-button]');
-    if (!btn) return;
-
-    var loaded = false;
-    function loadEmbed() {
-      if (loaded) return;
-      loaded = true;
-      mount.innerHTML =
-        '<iframe title="Gurehmat C. Resume PDF" ' +
-        'src="./assets/Resume_3-4-2026.pdf#view=FitH" ' +
-        'style="width:100%; height:100%; border: 0; border-radius: 12px; background: rgba(0,0,0,0.08);" ' +
-        'loading="lazy"></iframe>';
+    function openModal(slug) {
+      var overlay = document.getElementById('modal-' + slug);
+      if (!overlay) return;
+      overlay.classList.add('is-open');
+      document.body.classList.add('modal-open');
+      var backBtn = overlay.querySelector('[data-modal-close]');
+      if (backBtn) backBtn.focus();
     }
+    function closeModal() {
+      var open = document.querySelector('.modal-overlay.is-open');
+      if (!open) return;
+      open.classList.remove('is-open');
+      document.body.classList.remove('modal-open');
+    }
+    document.querySelectorAll('.project-card[data-modal]').forEach(function (card) {
+      card.addEventListener('click', function () { openModal(card.getAttribute('data-modal')); });
+      card.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card.getAttribute('data-modal')); }
+      });
+    });
+    document.querySelectorAll('[data-modal-close]').forEach(function (btn) {
+      btn.addEventListener('click', closeModal);
+    });
+    document.querySelectorAll('.modal-overlay').forEach(function (overlay) {
+      overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(); });
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+  });
 
-    btn.addEventListener('click', loadEmbed);
+  // Childhood photo toggle: pixelated <-> normal on click
+  document.addEventListener('DOMContentLoaded', function () {
+    var img = document.querySelector('[data-toggle-childhood]');
+    if (!img) return;
+    var pixelSrc = img.getAttribute('data-pixel-src');
+    var normalSrc = img.getAttribute('data-normal-src');
+    var isPixel = true;
+    img.addEventListener('click', function () {
+      img.src = isPixel ? normalSrc : pixelSrc;
+      img.style.imageRendering = isPixel ? 'auto' : 'pixelated';
+      isPixel = !isPixel;
+    });
+  });
+
+  // Year auto-update
+  document.addEventListener('DOMContentLoaded', function () {
+    var yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
   });
 
 })();
