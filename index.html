@@ -62,16 +62,14 @@
     <header class="header">
         <div class="topbar">
             <div class="brand">
-                <span class="brand_name">
-                    GUREHMAT C.
-                </span>
+                <span class="brand_name">GUREHMAT C.</span>
             </div>
 
             <nav class="nav">
-                <a href="index.html" class="nav_link is-active">HOME</a>
-                <a href="about.html" class="nav_link">ABOUT</a>
-                <a href="work.html" class="nav_link">WORK</a>
-                <a href="journal.html" class="nav_link">JOURNAL</a>
+                <a href="#home" class="nav_link" data-nav-target="home">HOME</a>
+                <a href="#work" class="nav_link" data-nav-target="work">WORK</a>
+                <a href="#resume" class="nav_link" data-nav-target="resume">RESUME</a>
+                <a href="#about" class="nav_link" data-nav-target="about">ABOUT</a>
             </nav>
             <div class="topbar_actions">
                 <button type="button" class="icon-btn theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">[ DARK ]</button>
@@ -85,7 +83,7 @@
                     <img class="icon-logo" src="./assets/email-pixelated.png" alt="Email">
                 </a>
             </div>
-            <a class="btn btn--resume" href="./resume.html" aria-label="Resume">
+            <a class="btn btn--resume" href="./assets/Resume_3-4-2026.pdf" download aria-label="Download resume PDF">
                 <span class="btn--resume-text btn--resume-text--full">[ RESUME ]</span>
                 <span class="btn--resume-text btn--resume-text--short" aria-hidden="true">[ CV ]</span>
             </a>
@@ -93,111 +91,820 @@
     </header>
 
     <main id="main" class="container">
-        <section class="panel hero">
-            <div class="hero_grid">
-                <section class="card avatar_card">
-                    <div class="card_media">
-                        <img src="./assets/Gurehmat_avatar.png" alt="Portrait of Gurehmat Chahal (Gurehmat C.)">
-                    </div>
-                    <div class="card_body">
-                        <h1 class="h1">
-                            GUREHMAT C.
-                        </h1>
-                        <p class="muted">
-                            Gurehmat Chahal · McMaster University · Computer Science
-                        </p>
-                        <div class="quick_facts">
-                            <span class="pill">
-                                Seeking: Software Engineering / Full-Stack Internship (Summer/Fall)
-                            </span>
-                            <span class="pill">
-                                Location: Hamilton / Toronto · Open to Remote
-                            </span>
+
+        <!-- ======================================================= HOME -->
+        <section id="home">
+            <div class="panel hero">
+                <div class="hero_grid">
+                    <section class="card avatar_card">
+                        <div class="card_media">
+                            <img src="./assets/Gurehmat_avatar.png" alt="Portrait of Gurehmat Chahal (Gurehmat C.)">
                         </div>
+                        <div class="card_body">
+                            <h1 class="h1">GUREHMAT C.</h1>
+                            <p class="muted">Gurehmat Chahal · McMaster University · Computer Science</p>
+                            <div class="quick_facts">
+                                <span class="pill">Seeking: Software Engineering / Full-Stack Internship (Summer/Fall)</span>
+                                <span class="pill">Location: Hamilton / Toronto · Open to Remote</span>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="card terminal">
+                        <div class="terminal_top">
+                            <span class="terminal_username" data-typewriter="gurehmat@portfolio:~$"></span><span class="terminal_cursor" aria-hidden="true"></span>
+                        </div>
+                        <div class="terminal_body">
+                            <p class="terminal_title">Computer Science student building tested full-stack apps</p>
+                            <p class="terminal_text">I build user-facing React + TypeScript applications backed by Supabase (Postgres, Auth, Edge Functions) and modern tooling. PantryCheff is my flagship: an AI-powered pantry and recipe app built with strict typing, automated tests, and CI/CD.</p>
+                            <ul class="bullet_points">
+                                <li>Built and shipped PantryCheff with 154 automated tests (Vitest, React Testing Library, MSW), strict TypeScript, and GitHub Actions CI.</li>
+                                <li>Work across React UI, Zustand state, Supabase (Postgres, Auth, Edge Functions), and Tailwind CSS to ship reliable full-stack flows.</li>
+                                <li>Focused on maintainability, performance, and product polish: type-safe APIs, structured error handling, and fast, skimmable interfaces.</li>
+                            </ul>
+                            <div class="call_to_action">
+                                <a href="#work" class="btn">[ VIEW PANTRYCHEFF ]</a>
+                                <a href="#about" class="btn">[ ABOUT &amp; STACK ]</a>
+                            </div>
+                            <p class="muted proof_strip">CS @ McMaster · React + TypeScript · Supabase · 154 tests · CI/CD · AI via Gemini</p>
+                            <div class="tech-stack">
+                                <div class="label">// TECH_STACK</div>
+                                <div class="tech_pills">
+                                    <span class="pill pill--blue">[ REACT ]</span>
+                                    <span class="pill pill--blue">[ TYPESCRIPT ]</span>
+                                    <span class="pill">[ SUPABASE ]</span>
+                                    <span class="pill">[ POSTGRES / SQL ]</span>
+                                    <span class="pill">[ ZUSTAND ]</span>
+                                    <span class="pill">[ TAILWIND ]</span>
+                                    <span class="pill">[ VITEST ]</span>
+                                    <span class="pill">[ REACT TESTING LIBRARY ]</span>
+                                    <span class="pill">[ MSW ]</span>
+                                    <span class="pill">[ GITHUB ACTIONS ]</span>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <div class="panel reveal">
+                <div class="panel_head">
+                    <h2 class="h2">// EXPLORE</h2>
+                    <p class="muted">Flagship project, how I work, and what I'm learning</p>
+                </div>
+                <div class="home_links">
+                    <a href="#work" class="home_link_card card reveal reveal--stagger-1">
+                        <span class="home_link_label">WORK</span>
+                        <p class="home_link_text">Projects I've shipped — led by PantryCheff, my React + TypeScript + Supabase flagship.</p>
+                    </a>
+                    <a href="#about" class="home_link_card card reveal reveal--stagger-2">
+                        <span class="home_link_label">ABOUT</span>
+                        <p class="home_link_text">Who I am, the stack I use, and how I approach testing and iteration.</p>
+                    </a>
+                    <a href="#journal" class="home_link_card card reveal reveal--stagger-3">
+                        <span class="home_link_label">JOURNAL</span>
+                        <p class="home_link_text">Reflections on labs and what I'm learning.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================= WORK -->
+        <section id="work">
+            <div class="panel reveal">
+                <div class="panel_head">
+                    <h2 class="h2">// WORK</h2>
+                    <p class="muted">Selected projects — click any card for details</p>
+                </div>
+                <div class="work_grid">
+
+                    <!-- PantryCheff -->
+                    <article class="card entry project_entry project-card reveal"
+                             data-modal="pantrycheff"
+                             role="button"
+                             tabindex="0"
+                             aria-label="Open PantryCheff project details">
+                        <header class="entry_header project_header">
+                            <div class="project_terminal-left">
+                                <span class="terminal_dots" aria-hidden="true">
+                                    <span class="terminal_dot terminal_dot--red"></span>
+                                    <span class="terminal_dot terminal_dot--dim"></span>
+                                    <span class="terminal_dot terminal_dot--dim"></span>
+                                </span>
+                                <span class="project_prompt">pantrycheff@projects:~$</span>
+                            </div>
+                            <div class="project_meta-chips">
+                                <span class="pill">[ 2026 ]</span>
+                                <span class="pill">[ REACT + TS ]</span>
+                            </div>
+                        </header>
+                        <div class="entry_body project_body">
+                            <div class="project_layout">
+                                <div class="project_content">
+                                    <div class="project_title_row">
+                                        <h3 class="project_title">PantryCheff</h3>
+                                        <span class="project_badge project_badge--shipped">[ SHIPPED ]</span>
+                                    </div>
+                                    <p class="project_pitch">AI-powered pantry + recipe engine that reduces food waste. 154 automated tests, O(P+R) matching algorithm, 99.8% bundle optimization.</p>
+                                    <div class="project_stack">
+                                        <span class="pill pill--blue">[ REACT 19 ]</span>
+                                        <span class="pill pill--blue">[ TYPESCRIPT ]</span>
+                                        <span class="pill">[ SUPABASE ]</span>
+                                        <span class="pill">[ GEMINI API ]</span>
+                                        <span class="pill">[ VITEST ]</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- AI Lesson Coach -->
+                    <article class="card entry project_entry project-card reveal reveal--stagger-1"
+                             data-modal="ai-lesson-coach"
+                             role="button"
+                             tabindex="0"
+                             aria-label="Open AI Lesson Coach project details">
+                        <header class="entry_header project_header">
+                            <div class="project_terminal-left">
+                                <span class="terminal_dots" aria-hidden="true">
+                                    <span class="terminal_dot terminal_dot--red"></span>
+                                    <span class="terminal_dot terminal_dot--dim"></span>
+                                    <span class="terminal_dot terminal_dot--dim"></span>
+                                </span>
+                                <span class="project_prompt">ai-coach@projects:~$</span>
+                            </div>
+                            <div class="project_meta-chips">
+                                <span class="pill">[ 2026 ]</span>
+                                <span class="pill">[ ENTERPRISE ]</span>
+                            </div>
+                        </header>
+                        <div class="entry_body project_body">
+                            <div class="project_layout">
+                                <div class="project_content">
+                                    <div class="project_title_row">
+                                        <h3 class="project_title">AI Lesson Coach</h3>
+                                        <span class="project_badge project_badge--shipped">[ SHIPPED ]</span>
+                                    </div>
+                                    <p class="project_pitch">Workplace Edge × Riipen. Enterprise AI coaching chatbot for real client. Heuristic intent detection, content safety, SCORM integration. 3-person team.</p>
+                                    <div class="project_stack">
+                                        <span class="pill pill--blue">[ REACT 18 ]</span>
+                                        <span class="pill pill--blue">[ TYPESCRIPT ]</span>
+                                        <span class="pill">[ GEMINI 2.5 ]</span>
+                                        <span class="pill">[ EXPRESS ]</span>
+                                        <span class="pill">[ PRISMA ]</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- C.A.P.T.C.H.A. -->
+                    <article class="card entry project_entry project-card reveal reveal--stagger-2"
+                             data-modal="captcha"
+                             role="button"
+                             tabindex="0"
+                             aria-label="Open C.A.P.T.C.H.A. project details">
+                        <header class="entry_header project_header">
+                            <div class="project_terminal-left">
+                                <span class="terminal_dots" aria-hidden="true">
+                                    <span class="terminal_dot terminal_dot--red"></span>
+                                    <span class="terminal_dot terminal_dot--dim"></span>
+                                    <span class="terminal_dot terminal_dot--dim"></span>
+                                </span>
+                                <span class="project_prompt">captcha@projects:~$</span>
+                            </div>
+                            <div class="project_meta-chips">
+                                <span class="pill">[ 2025 ]</span>
+                                <span class="pill">[ HACKATHON ]</span>
+                            </div>
+                        </header>
+                        <div class="entry_body project_body">
+                            <div class="project_layout">
+                                <div class="project_content">
+                                    <div class="project_title_row">
+                                        <h3 class="project_title">C.A.P.T.C.H.A.</h3>
+                                        <span class="project_badge">[ HACKATHON ]</span>
+                                    </div>
+                                    <p class="project_pitch">Chrome Extension built solo at the Toronto Stupid Ideas Hackathon. Manifest V3, vanilla JavaScript.</p>
+                                    <div class="project_stack">
+                                        <span class="pill pill--blue">[ CHROME EXT ]</span>
+                                        <span class="pill pill--blue">[ MANIFEST V3 ]</span>
+                                        <span class="pill">[ JAVASCRIPT ]</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- SEED -->
+                    <article class="card entry project_entry project-card reveal reveal--stagger-3"
+                             data-modal="seed"
+                             role="button"
+                             tabindex="0"
+                             aria-label="Open SEED project details">
+                        <header class="entry_header project_header">
+                            <div class="project_terminal-left">
+                                <span class="terminal_dots" aria-hidden="true">
+                                    <span class="terminal_dot terminal_dot--red"></span>
+                                    <span class="terminal_dot terminal_dot--dim"></span>
+                                    <span class="terminal_dot terminal_dot--dim"></span>
+                                </span>
+                                <span class="project_prompt">seed@projects:~$</span>
+                            </div>
+                            <div class="project_meta-chips">
+                                <span class="pill">[ 2025 ]</span>
+                                <span class="pill">[ BEST UI ]</span>
+                            </div>
+                        </header>
+                        <div class="entry_body project_body">
+                            <div class="project_layout">
+                                <div class="project_content">
+                                    <div class="project_title_row">
+                                        <h3 class="project_title">SEED</h3>
+                                        <span class="project_badge">[ HACKATHON · BEST UI ]</span>
+                                    </div>
+                                    <p class="project_pitch">MillHacks 2025 — Best UI award. Climate-tech storytelling site for coastal plastic cleanup concept. Mobile-first, responsive, judge-facing.</p>
+                                    <div class="project_stack">
+                                        <span class="pill pill--blue">[ HTML5 ]</span>
+                                        <span class="pill pill--blue">[ SCSS ]</span>
+                                        <span class="pill">[ VANILLA JS ]</span>
+                                        <span class="pill">[ GITHUB PAGES ]</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- WareShare (in progress, not clickable) -->
+                    <article class="card entry project_entry project-card project-card--wip reveal reveal--stagger-4">
+                        <header class="entry_header project_header">
+                            <div class="project_terminal-left">
+                                <span class="terminal_dots" aria-hidden="true">
+                                    <span class="terminal_dot terminal_dot--dim"></span>
+                                    <span class="terminal_dot terminal_dot--dim"></span>
+                                    <span class="terminal_dot terminal_dot--dim"></span>
+                                </span>
+                                <span class="project_prompt">wareshare@projects:~$</span>
+                            </div>
+                            <div class="project_meta-chips">
+                                <span class="pill">[ 2026 ]</span>
+                                <span class="pill">[ IN PROGRESS ]</span>
+                            </div>
+                        </header>
+                        <div class="entry_body project_body">
+                            <div class="project_layout">
+                                <div class="project_content">
+                                    <div class="project_title_row">
+                                        <h3 class="project_title">WareShare</h3>
+                                        <span class="project_badge">[ IN PROGRESS ]</span>
+                                    </div>
+                                    <p class="project_pitch">Real company placement via Advance Ontario Level Up. Next.js, Vercel, Cloudflare.</p>
+                                    <div class="project_stack">
+                                        <span class="pill">[ NEXT.JS ]</span>
+                                        <span class="pill">[ VERCEL ]</span>
+                                        <span class="pill">[ CLOUDFLARE ]</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================================= RESUME -->
+        <section id="resume">
+            <div class="panel reveal">
+                <div class="panel_head">
+                    <h2 class="h2">// RESUME</h2>
+                    <p class="muted">Experience, education, achievements, skills</p>
+                </div>
+                <div class="resume_grid">
+
+                    <!-- LEFT: Experience / Education / Achievements -->
+                    <div class="resume_col">
+
+                        <div class="resume_section">
+                            <span class="resume_section-label resume_section-label--rust">Experience</span>
+
+                            <div class="resume_entry">
+                                <p class="resume_entry-title">AI Developer</p>
+                                <p class="resume_entry-meta">Workplace Edge &mdash; Remote &mdash; Jan 2026 &ndash; May 2026</p>
+                                <ul class="resume_entry-bullets">
+                                    <li>Developed AI coaching chatbot for enterprise client using React 18, TypeScript, Express, Prisma, Gemini 2.5 Flash; frontend on Vercel, API on Railway, Turso (libSQL) as database.</li>
+                                    <li>Built heuristic intent detection pipeline to classify learner requests and dynamically inject lesson content into Gemini's system prompt.</li>
+                                    <li>Implemented content safety layer with PII stripping, keyword-based escalation detection for HR/crisis topics, and input filtering.</li>
+                                </ul>
+                            </div>
+
+                            <div class="resume_entry">
+                                <p class="resume_entry-title">Founder &amp; CTO</p>
+                                <p class="resume_entry-meta">Advancing Future Innovators (AFI) &mdash; Ontario &mdash; 2024&ndash;2025</p>
+                                <ul class="resume_entry-bullets">
+                                    <li>Founded nonprofit delivering coding workshops to 30+ students per session; managed ops, school partnerships, and volunteer coordination.</li>
+                                    <li>Designed and delivered Scratch, logic, and computational thinking curriculum.</li>
+                                </ul>
+                            </div>
+
+                            <div class="resume_entry">
+                                <p class="resume_entry-title">Swim Instructor</p>
+                                <p class="resume_entry-meta">Super Swims &mdash; Ontario &mdash; 2023&ndash;2025</p>
+                                <ul class="resume_entry-bullets">
+                                    <li>One-on-one swim instruction for autistic children, adapting to individual needs and communication styles.</li>
+                                </ul>
+                            </div>
+
+                            <div class="resume_entry">
+                                <p class="resume_entry-title">Inclusion &amp; Integration Instructor</p>
+                                <p class="resume_entry-meta">City of Brampton &mdash; Ontario &mdash; 2023&ndash;2025</p>
+                                <ul class="resume_entry-bullets">
+                                    <li>Supported participants with Down syndrome, autism, and physical disabilities in camp settings; groups of 1–3, adapted activities for full participation.</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="resume_section">
+                            <span class="resume_section-label resume_section-label--amber">Education</span>
+                            <div class="resume_entry">
+                                <p class="resume_entry-title">BASc Computer Science (Co-op)</p>
+                                <p class="resume_entry-meta">McMaster University &mdash; Hamilton, ON &mdash; Sep 2025 &ndash; May 2029</p>
+                            </div>
+                        </div>
+
+                        <div class="resume_section">
+                            <span class="resume_section-label resume_section-label--rust-dark">Achievements &amp; Extracurriculars</span>
+                            <div class="resume_entry">
+                                <p class="resume_entry-title">NASA Space Settlement Design Contest &mdash; Grand Prize, 2025</p>
+                                <ul class="resume_entry-bullets">
+                                    <li>9,000+ participants across 12 countries. 15-page proposal for a settlement orbiting Phobos: closed-loop aeroponic agriculture for 800+ inhabitants, Arduino proof-of-concept. Presented at ISDC.</li>
+                                </ul>
+                            </div>
+                            <div class="resume_entry">
+                                <p class="resume_entry-title">MEC Debate &mdash; 2nd Place, 2025</p>
+                            </div>
+                            <div class="resume_entry">
+                                <p class="resume_entry-title">Activities</p>
+                                <p class="resume_entry-meta">Mac AI Club &middot; Engineers Without Borders &middot; Socratica</p>
+                            </div>
+                        </div>
+
+                        <div class="resume_download-row">
+                            <a class="btn" href="./assets/Resume_3-4-2026.pdf" download>[ &#8595; DOWNLOAD PDF ]</a>
+                        </div>
+
                     </div>
 
-                </section>
-                <section class="card terminal">
-                    <div class="terminal_top">
-                        <span class="terminal_username" data-typewriter="gurehmat@portfolio:~$"></span><span class="terminal_cursor" aria-hidden="true"></span>
-                    </div>
-                    <div class="terminal_body">
-                        <p class="terminal_title">
-                            Computer Science student building tested full-stack apps
-                        </p>
-                        <p class="terminal_text">
-                            I build user-facing React + TypeScript applications backed by Supabase (Postgres, Auth, Edge Functions) and modern tooling. PantryCheff is my flagship: an AI-powered pantry and recipe app built with strict typing, automated tests, and CI/CD.
-                        </p>
-                        <ul class="bullet_points">
-                            <li>
-                                Built and shipped PantryCheff with 154 automated tests (Vitest, React Testing Library, MSW), strict TypeScript, and GitHub Actions CI.
-                            </li>
-                            <li>
-                                Work across React UI, Zustand state, Supabase (Postgres, Auth, Edge Functions), and Tailwind CSS to ship reliable full-stack flows.
-                            </li>
-                            <li>
-                                Focused on maintainability, performance, and product polish: type-safe APIs, structured error handling, and fast, skimmable interfaces.
-                            </li>
-                        </ul>
-                        <div class="call_to_action">
-                            <a href="./work.html" class="btn">[ VIEW PANTRYCHEFF ]</a>
-                            <a href="./about.html" class="btn">[ ABOUT & STACK ]</a>
-                        </div>
-                        <p class="muted proof_strip">
-                            CS @ McMaster · React + TypeScript · Supabase · 154 tests · CI/CD · AI via Gemini
-                        </p>
-                        <div class="tech-stack">
-                            <div class="label">// TECH_STACK</div>
-                            <div class="tech_pills">
-                                <span class="pill pill--blue">[ REACT ]</span>
-                                <span class="pill pill--blue">[ TYPESCRIPT ]</span>
-                                <span class="pill">[ SUPABASE ]</span>
-                                <span class="pill">[ POSTGRES / SQL ]</span>
-                                <span class="pill">[ ZUSTAND ]</span>
-                                <span class="pill">[ TAILWIND ]</span>
-                                <span class="pill">[ VITEST ]</span>
-                                <span class="pill">[ REACT TESTING LIBRARY ]</span>
-                                <span class="pill">[ MSW ]</span>
-                                <span class="pill">[ GITHUB ACTIONS ]</span>
+                    <!-- RIGHT: Skills -->
+                    <div class="resume_col">
+                        <div class="resume_section">
+                            <span class="resume_section-label resume_section-label--rust">Skills</span>
+
+                            <div class="resume_skills-group">
+                                <span class="resume_skill-label">// LANGUAGES</span>
+                                <div class="tech_pills">
+                                    <span class="pill">[ C ]</span>
+                                    <span class="pill">[ PYTHON ]</span>
+                                    <span class="pill pill--blue">[ JAVASCRIPT ]</span>
+                                    <span class="pill pill--blue">[ TYPESCRIPT ]</span>
+                                    <span class="pill">[ SQL ]</span>
+                                    <span class="pill">[ HTML / CSS ]</span>
+                                    <span class="pill">[ HASKELL ]</span>
+                                </div>
+                            </div>
+
+                            <div class="resume_skills-group">
+                                <span class="resume_skill-label">// FRAMEWORKS &amp; LIBRARIES</span>
+                                <div class="tech_pills">
+                                    <span class="pill pill--blue">[ REACT 19 ]</span>
+                                    <span class="pill">[ ZUSTAND ]</span>
+                                    <span class="pill">[ TAILWIND CSS ]</span>
+                                    <span class="pill">[ SUPABASE ]</span>
+                                    <span class="pill">[ NODE.JS ]</span>
+                                    <span class="pill">[ EXPRESS ]</span>
+                                    <span class="pill">[ VITE ]</span>
+                                    <span class="pill">[ POSTGRESQL ]</span>
+                                    <span class="pill">[ PRISMA ]</span>
+                                </div>
+                            </div>
+
+                            <div class="resume_skills-group">
+                                <span class="resume_skill-label">// TOOLS</span>
+                                <div class="tech_pills">
+                                    <span class="pill">[ GIT / GITHUB ]</span>
+                                    <span class="pill">[ GITHUB ACTIONS ]</span>
+                                    <span class="pill">[ VITEST ]</span>
+                                    <span class="pill">[ ESLINT ]</span>
+                                    <span class="pill">[ PRETTIER ]</span>
+                                    <span class="pill">[ CURSOR ]</span>
+                                    <span class="pill">[ LINUX ]</span>
+                                    <span class="pill">[ DOCKER ]</span>
+                                    <span class="pill">[ RAILWAY ]</span>
+                                    <span class="pill">[ TURSO ]</span>
+                                </div>
+                            </div>
+
+                            <div class="resume_skills-group">
+                                <span class="resume_skill-label">// CONCEPTS</span>
+                                <div class="tech_pills">
+                                    <span class="pill">[ LLM INTEGRATION ]</span>
+                                    <span class="pill">[ PROMPT ENGINEERING ]</span>
+                                    <span class="pill">[ REST APIS ]</span>
+                                    <span class="pill">[ CI / CD ]</span>
+                                    <span class="pill">[ ROW-LEVEL SECURITY ]</span>
+                                    <span class="pill">[ STATE MANAGEMENT ]</span>
+                                    <span class="pill">[ INTENT DETECTION ]</span>
+                                    <span class="pill">[ CONTENT SAFETY ]</span>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </section>
+
+                </div>
             </div>
         </section>
 
-        <section class="panel reveal">
-            <div class="panel_head">
-                <h2 class="h2">// EXPLORE</h2>
-                <p class="muted">Flagship project, how I work, and what I’m learning</p>
-            </div>
-            <div class="home_links">
-                <a href="./work.html" class="home_link_card card reveal reveal--stagger-1">
-                    <span class="home_link_label">WORK</span>
-                    <p class="home_link_text">Projects I’ve shipped — led by PantryCheff, my React + TypeScript + Supabase flagship.</p>
-                </a>
-                <a href="./about.html" class="home_link_card card reveal reveal--stagger-2">
-                    <span class="home_link_label">ABOUT</span>
-                    <p class="home_link_text">Who I am, the stack I use, and how I approach testing and iteration.</p>
-                </a>
-                <a href="./journal.html" class="home_link_card card reveal reveal--stagger-3">
-                    <span class="home_link_label">JOURNAL</span>
-                    <p class="home_link_text">Reflections on labs and what I’m learning.</p>
-                </a>
+        <!-- ======================================================= ABOUT -->
+        <section id="about">
+            <div class="panel reveal">
+                <div class="panel_head">
+                    <h2 class="h2">// ABOUT</h2>
+                    <p class="muted">Who I am and how I work</p>
+                </div>
+
+                <div class="hero_grid">
+                    <section class="card about_intro reveal">
+                        <div class="card_media about_childhood-media">
+                            <img
+                                src="./assets/Childhood-pixelated.png"
+                                alt="Childhood photo of Gurehmat Chahal in pixelated style"
+                                class="childhood-photo"
+                                data-toggle-childhood
+                                data-pixel-src="./assets/Childhood-pixelated.png"
+                                data-normal-src="./assets/childhood.png"
+                                style="image-rendering: pixelated;"
+                            >
+                        </div>
+                        <div class="card_body">
+                            <h3 class="h3">Gurehmat Chahal</h3>
+                            <p class="about_subline muted">First-year CS Co-op at McMaster. Building full-stack apps, co-founded AFI nonprofit, training Muay Thai &amp; BJJ, building PCs.</p>
+                            <ul class="bullet_points">
+                                <li>I'm most proud of PantryCheff — an AI-powered pantry and recipe app where I owned the React + TypeScript frontend, Supabase backend, and testing + CI pipeline.</li>
+                                <li>I build PCs and enjoy tinkering end-to-end; that same mindset shows up in how I debug, profile, and tighten up full-stack flows.</li>
+                                <li>Outside of code: Muay Thai, BJJ, and hiking. In 2025 I won the NSS Healthy Living Competition grand prize (9,000+ participants across 11 countries), which taught me a lot about consistency and deliberate practice.</li>
+                            </ul>
+                            <p class="about_now"><span class="meta_k">Currently:</span> Seeking a Summer 2026 software engineering internship.</p>
+                        </div>
+                    </section>
+
+                    <section class="card reveal reveal--stagger-1">
+                        <div class="card_body">
+                            <div class="proof_strip">
+                                <span class="pill">[ SHIPPED ]</span>
+                                <span class="pill">[ REACT + TYPESCRIPT ]</span>
+                                <span class="pill pill--blue">[ SUPABASE / POSTGRES ]</span>
+                                <span class="pill">[ TESTING + CI/CD ]</span>
+                                <span class="pill">[ AI VIA GEMINI ]</span>
+                            </div>
+                            <h3 class="h3">Capabilities</h3>
+                            <div class="about_section">
+                                <div class="label">// CAPABILITIES</div>
+                                <ul class="bullet_points">
+                                    <li>Build React + TypeScript frontends with reusable components, Zustand state management, and Tailwind-based layouts.</li>
+                                    <li>Integrate Supabase auth, Postgres, and Edge Functions into full-stack apps with clear data contracts and SQL-backed queries.</li>
+                                    <li>Connect Gemini via Supabase Edge Functions to handle AI work (vision, classification, generation) safely on the server side.</li>
+                                    <li>Write automated tests across unit, component, and integration levels using Vitest, React Testing Library, and MSW, and run them in GitHub Actions.</li>
+                                    <li>Debug and iterate with browser dev tools, performance profiling, and small, testable changes that keep code maintainable.</li>
+                                </ul>
+                            </div>
+                            <div class="about_section">
+                                <div class="label">// TOOLS</div>
+                                <div class="tech_pills">
+                                    <span class="pill pill--blue">[ REACT ]</span>
+                                    <span class="pill pill--blue">[ TYPESCRIPT ]</span>
+                                    <span class="pill">[ VITE ]</span>
+                                    <span class="pill">[ ZUSTAND ]</span>
+                                    <span class="pill">[ TAILWIND ]</span>
+                                    <span class="pill">[ SUPABASE ]</span>
+                                    <span class="pill">[ POSTGRES / SQL ]</span>
+                                    <span class="pill">[ VITEST ]</span>
+                                    <span class="pill">[ REACT TESTING LIBRARY ]</span>
+                                    <span class="pill">[ MSW ]</span>
+                                    <span class="pill">[ GITHUB ACTIONS ]</span>
+                                    <span class="pill pill--yellow">[ HTML / CSS / SCSS ]</span>
+                                    <span class="pill">[ JAVASCRIPT ]</span>
+                                    <span class="pill">[ PYTHON ]</span>
+                                    <span class="pill">[ GIT / GITHUB ]</span>
+                                </div>
+                            </div>
+                            <div class="about_section">
+                                <div class="label">// HOW I WORK</div>
+                                <ul class="bullet_points">
+                                    <li>Define scope, data flow, and interfaces up front, then break work into small, testable steps.</li>
+                                    <li>Use consistent naming and structure, keep types and schemas in sync, and document decisions so others can follow.</li>
+                                    <li>Ship in increments, add tests around bugs, and refine performance and UX based on real usage.</li>
+                                </ul>
+                            </div>
+                            <div class="call_to_action">
+                                <a href="#work" class="btn btn--primary">[ VIEW WORK ]</a>
+                                <a href="mailto:gurehmat9@gmail.com" class="btn">[ EMAIL ME ]</a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="about_stats reveal">
+                    <div class="stat_box">
+                        <span class="stat_num">154</span>
+                        <span class="stat_label">Automated tests written</span>
+                    </div>
+                    <div class="stat_box">
+                        <span class="stat_num">30+</span>
+                        <span class="stat_label">Students per session (AFI)</span>
+                    </div>
+                    <div class="stat_box">
+                        <span class="stat_num">9K+</span>
+                        <span class="stat_label">NASA contest competitors</span>
+                    </div>
+                </div>
             </div>
         </section>
+
+        <!-- ======================================================= JOURNAL -->
+        <div class="panel" id="journal">
+            <div class="panel_head">
+                <h2 class="h2">// JOURNAL</h2>
+                <p class="muted">Snapshots from my journey learning CS, shipping projects, and figuring things out.</p>
+            </div>
+            <div class="journal-entries">
+
+                <article class="card entry reveal" data-entry-date="2025-09-01">
+                    <header class="entry_header">
+                        <h3 class="h3">2025-09-01 // First CS lecture</h3>
+                        <span class="pill">CS 1XD3</span>
+                    </header>
+                    <div class="entry_body">
+                        <ul class="bullets">
+                            <li><strong>What happened:</strong> Walked into my first CS class and immediately realized "writing code" is really "managing state and edge cases."</li>
+                            <li><strong>Challenge:</strong> Keeping up with new terms (state, side effects, invariants) while still trying to write working code.</li>
+                            <li><strong>Takeaway:</strong> Slowing down to draw diagrams before coding helped everything click a bit more.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card entry reveal reveal--stagger-1" data-entry-date="2025-10-12">
+                    <header class="entry_header">
+                        <h3 class="h3">2025-10-12 // First JavaScript labs</h3>
+                        <span class="pill">CS 1XD3</span>
+                    </header>
+                    <div class="entry_body">
+                        <ul class="bullets">
+                            <li><strong>What I built:</strong> 8Ball and MathQuiz labs that reacted to input and updated the DOM.</li>
+                            <li><strong>Challenge:</strong> Remembering that the browser keeps state between button clicks instead of "restarting" my script.</li>
+                            <li><strong>Takeaway:</strong> Planning variables and possible states before coding saved a lot of console.log debugging.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card entry reveal reveal--stagger-2" data-entry-date="2025-11-03">
+                    <header class="entry_header">
+                        <h3 class="h3">2025-11-03 // Debugging like a detective</h3>
+                        <span class="pill">CS 1XD3</span>
+                    </header>
+                    <div class="entry_body">
+                        <ul class="bullets">
+                            <li><strong>What I did:</strong> Used browser dev tools (Elements + Console) to trace why styles weren't applying the way I expected.</li>
+                            <li><strong>Challenge:</strong> Realizing that a missing class name can break the whole layout even if the CSS is "correct."</li>
+                            <li><strong>Takeaway:</strong> Inspecting elements live and toggling classes is way faster than guessing in the editor.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card entry reveal" data-entry-date="2025-12-10">
+                    <header class="entry_header">
+                        <h3 class="h3">2025-12-10 // Shipping SEED for MillHacks</h3>
+                        <span class="pill">HACKATHON</span>
+                    </header>
+                    <div class="entry_body">
+                        <ul class="bullets">
+                            <li><strong>What we shipped:</strong> SEED, a judge-facing site explaining a climate-tech idea (drones + ML + spectral imagery) in a clear story.</li>
+                            <li><strong>Challenge:</strong> Balancing visuals and readability on no sleep while still keeping the CSS organized.</li>
+                            <li><strong>Takeaway:</strong> Good spacing and typography matter as much as the idea when someone is skimming your project in 3 minutes.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card entry reveal reveal--stagger-1" data-entry-date="2026-01-20">
+                    <header class="entry_header">
+                        <h3 class="h3">2026-01-20 // PantryCheff prototype</h3>
+                        <span class="pill">PERSONAL</span>
+                    </header>
+                    <div class="entry_body">
+                        <ul class="bullets">
+                            <li><strong>What I built:</strong> First version of PantryCheff with a basic UI and mocked data, just to prove the flow (scan → match → generate).</li>
+                            <li><strong>Challenge:</strong> Deciding what should live in the front end vs. Supabase vs. Edge Functions.</li>
+                            <li><strong>Takeaway:</strong> Having a clear "data contract" between client and server made it easier to swap in the real AI calls later.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card entry reveal reveal--stagger-2" data-entry-date="2026-02-05">
+                    <header class="entry_header">
+                        <h3 class="h3">2026-02-05 // NSS Healthy Living win</h3>
+                        <span class="pill">PERSONAL</span>
+                    </header>
+                    <div class="entry_body">
+                        <ul class="bullets">
+                            <li><strong>Context:</strong> Entered the NSS Healthy Living competition mostly for fun and to push myself to live what I talk about.</li>
+                            <li><strong>Result:</strong> Won the grand prize out of 9k+ participants across 11 countries.</li>
+                            <li><strong>Takeaway:</strong> Consistency (training, eating, sleeping) is the same idea I use when iterating on projects.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card entry reveal" data-entry-date="2026-02-20">
+                    <header class="entry_header">
+                        <h3 class="h3">2026-02-20 // Balancing Muay Thai &amp; code</h3>
+                        <span class="pill">LIFE</span>
+                    </header>
+                    <div class="entry_body">
+                        <ul class="bullets">
+                            <li><strong>What changed:</strong> Started taking Muay Thai and BJJ more seriously while classes and projects ramped up.</li>
+                            <li><strong>Challenge:</strong> Showing up to training tired after debugging late-night layout issues on PantryCheff.</li>
+                            <li><strong>Takeaway:</strong> Having something physical to reset my brain makes me better at both code and communication.</li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="card entry reveal reveal--stagger-1" data-entry-date="2026-03-01">
+                    <header class="entry_header">
+                        <h3 class="h3">2026-03-01 // Dark mode &amp; polish</h3>
+                        <span class="pill">E-PORTFOLIO</span>
+                    </header>
+                    <div class="entry_body">
+                        <ul class="bullets">
+                            <li><strong>What I refined:</strong> Added dark mode, micro-animations, and journal pagination to this portfolio.</li>
+                            <li><strong>Challenge:</strong> Keeping things "retro" while still feeling modern and fast on mobile.</li>
+                            <li><strong>Takeaway:</strong> Small details (hover states, scroll reveals, cursor animation) keep a static site feeling alive.</li>
+                        </ul>
+                    </div>
+                </article>
+
+            </div>
+        </div>
 
         <footer class="footer">
             <div class="footer_left">
                 <span class="muted">&copy; <span id="year">2026</span> Gurehmat C.</span>
             </div>
             <div class="footer_right">
-                <span class="muted">Built by Gurehmat C. | Dark mode + animations | Let's connect </span>
+                <span class="muted">Built by Gurehmat C. | Dark mode + animations | Let's connect</span>
             </div>
         </footer>
 
     </main>
 
+    <!-- ======================================================= MODALS -->
+
+    <!-- Modal: PantryCheff -->
+    <div class="modal-overlay" id="modal-pantrycheff" role="dialog" aria-modal="true" aria-labelledby="modal-pantrycheff-title">
+        <div class="modal-box">
+            <div class="modal-bar">
+                <span class="terminal_dots" aria-hidden="true">
+                    <span class="terminal_dot terminal_dot--red"></span>
+                    <span class="terminal_dot terminal_dot--dim"></span>
+                    <span class="terminal_dot terminal_dot--dim"></span>
+                </span>
+                <span class="modal-title" id="modal-pantrycheff-title">PantryCheff</span>
+                <button type="button" class="btn modal-back" data-modal-close>[ &#8592; BACK ]</button>
+            </div>
+            <div class="modal-body">
+                <p class="project_pitch">AI-powered pantry + recipe engine that reduces food waste by cooking from what you already have. Built with React, TypeScript, Supabase (Postgres, Auth, Edge Functions), and Gemini for multimodal fridge scanning.</p>
+                <ul class="project_bullets">
+                    <li><strong>Engineered</strong> a Set-based recipe matching algorithm with O(P+R) complexity and confidence scoring (exact, partial, fuzzy), covered by targeted unit tests.</li>
+                    <li><strong>Built</strong> a multimodal AI pipeline: fridge photo → Supabase Edge Function → Gemini Vision → validated ingredient list added to a type-safe pantry store.</li>
+                    <li><strong>Implemented</strong> strict TypeScript + Zustand state management, with 154 tests (Vitest, React Testing Library, MSW) running in GitHub Actions CI.</li>
+                    <li><strong>Optimized</strong> the main bundle by 99.8% (3,572KB → 8KB) with code splitting, lazy loading, and response caching.</li>
+                </ul>
+                <div class="project_stack">
+                    <span class="pill pill--blue">[ REACT 19 ]</span>
+                    <span class="pill pill--blue">[ TYPESCRIPT ]</span>
+                    <span class="pill">[ SUPABASE ]</span>
+                    <span class="pill">[ POSTGRES ]</span>
+                    <span class="pill">[ EDGE FUNCTIONS ]</span>
+                    <span class="pill pill--blue">[ GEMINI API ]</span>
+                    <span class="pill">[ TAILWIND ]</span>
+                    <span class="pill">[ ZUSTAND ]</span>
+                    <span class="pill">[ VITEST ]</span>
+                    <span class="pill">[ REACT TESTING LIBRARY ]</span>
+                    <span class="pill">[ MSW ]</span>
+                    <span class="pill">[ GITHUB ACTIONS ]</span>
+                </div>
+                <div class="project_actions">
+                    <a href="https://gurehmat.github.io/PANTRYCHEFFV3/#/" class="btn btn--primary" target="_blank" rel="noopener">[ LIVE DEMO ]</a>
+                    <a href="https://github.com/Gurehmat/PANTRYCHEFFV3" class="btn btn--ghost" target="_blank" rel="noopener">[ SOURCE ]</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: AI Lesson Coach -->
+    <div class="modal-overlay" id="modal-ai-lesson-coach" role="dialog" aria-modal="true" aria-labelledby="modal-ai-lesson-coach-title">
+        <div class="modal-box">
+            <div class="modal-bar">
+                <span class="terminal_dots" aria-hidden="true">
+                    <span class="terminal_dot terminal_dot--red"></span>
+                    <span class="terminal_dot terminal_dot--dim"></span>
+                    <span class="terminal_dot terminal_dot--dim"></span>
+                </span>
+                <span class="modal-title" id="modal-ai-lesson-coach-title">AI Lesson Coach</span>
+                <button type="button" class="btn modal-back" data-modal-close>[ &#8592; BACK ]</button>
+            </div>
+            <div class="modal-body">
+                <p class="project_pitch">Enterprise AI coaching chatbot built for a real client (Workplace Edge × Riipen) as part of a 3-person team. React 18, TypeScript, Express, Prisma, Gemini 2.5 Flash — frontend on Vercel, API on Railway, Turso (libSQL) as database.</p>
+                <ul class="project_bullets">
+                    <li><strong>Built</strong> a heuristic intent detection pipeline to classify learner requests and dynamically inject lesson content into Gemini's system prompt, adapting responses to the learner's current module.</li>
+                    <li><strong>Implemented</strong> a content safety layer with PII stripping, keyword-based escalation detection for HR/crisis topics, and input filtering before any data reaches the model.</li>
+                    <li><strong>Integrated</strong> a SCORM iframe embed so the chatbot renders inside existing LMS course environments without breaking the lesson flow.</li>
+                </ul>
+                <div class="project_stack">
+                    <span class="pill pill--blue">[ REACT 18 ]</span>
+                    <span class="pill pill--blue">[ TYPESCRIPT ]</span>
+                    <span class="pill pill--blue">[ GEMINI 2.5 FLASH ]</span>
+                    <span class="pill">[ EXPRESS ]</span>
+                    <span class="pill">[ PRISMA ]</span>
+                    <span class="pill">[ TURSO / LIBSQL ]</span>
+                    <span class="pill">[ VERCEL ]</span>
+                    <span class="pill">[ RAILWAY ]</span>
+                </div>
+                <p class="muted" style="font-size:13px;">Proprietary — no public repository or demo link.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: C.A.P.T.C.H.A. -->
+    <div class="modal-overlay" id="modal-captcha" role="dialog" aria-modal="true" aria-labelledby="modal-captcha-title">
+        <div class="modal-box">
+            <div class="modal-bar">
+                <span class="terminal_dots" aria-hidden="true">
+                    <span class="terminal_dot terminal_dot--red"></span>
+                    <span class="terminal_dot terminal_dot--dim"></span>
+                    <span class="terminal_dot terminal_dot--dim"></span>
+                </span>
+                <span class="modal-title" id="modal-captcha-title">C.A.P.T.C.H.A.</span>
+                <button type="button" class="btn modal-back" data-modal-close>[ &#8592; BACK ]</button>
+            </div>
+            <div class="modal-body">
+                <p class="project_pitch">Chrome Extension built solo at the Toronto Stupid Ideas Hackathon. Manifest V3, vanilla JavaScript. A deliberately absurd take on the CAPTCHA concept — designed to be frustrating by design.</p>
+                <ul class="project_bullets">
+                    <li><strong>Built</strong> as a Manifest V3 Chrome Extension from scratch in a single hackathon session.</li>
+                    <li><strong>Sole developer</strong> — handled extension architecture, content scripts, and UI entirely solo.</li>
+                </ul>
+                <div class="project_stack">
+                    <span class="pill pill--blue">[ CHROME EXTENSION ]</span>
+                    <span class="pill pill--blue">[ MANIFEST V3 ]</span>
+                    <span class="pill">[ JAVASCRIPT ]</span>
+                    <span class="pill">[ HTML / CSS ]</span>
+                </div>
+                <div class="project_actions">
+                    <a href="https://github.com/Gurehmat" class="btn btn--ghost" target="_blank" rel="noopener">[ SOURCE ]</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: SEED -->
+    <div class="modal-overlay" id="modal-seed" role="dialog" aria-modal="true" aria-labelledby="modal-seed-title">
+        <div class="modal-box">
+            <div class="modal-bar">
+                <span class="terminal_dots" aria-hidden="true">
+                    <span class="terminal_dot terminal_dot--red"></span>
+                    <span class="terminal_dot terminal_dot--dim"></span>
+                    <span class="terminal_dot terminal_dot--dim"></span>
+                </span>
+                <span class="modal-title" id="modal-seed-title">SEED</span>
+                <button type="button" class="btn modal-back" data-modal-close>[ &#8592; BACK ]</button>
+            </div>
+            <div class="modal-body">
+                <p class="project_pitch">Single-page hackathon site for SEED (Sustainable Environmental Eradication of Debris), a climate-tech concept to reduce coastal plastic pollution. Won Best UI at MillHacks 2025. Clear storytelling and responsive, judge-facing UI.</p>
+                <ul class="project_bullets">
+                    <li><strong>Designed</strong> a mobile-first, scannable layout optimized for judges under hackathon time constraints.</li>
+                    <li><strong>Implemented</strong> a modular SCSS component system for consistent spacing and visual hierarchy.</li>
+                    <li><strong>Shipped</strong> the full static site to GitHub Pages with clear scope documentation.</li>
+                </ul>
+                <div class="project_stack">
+                    <span class="pill pill--blue">[ HTML5 ]</span>
+                    <span class="pill pill--blue">[ SCSS / SASS ]</span>
+                    <span class="pill">[ CSS3 ]</span>
+                    <span class="pill">[ VANILLA JS ]</span>
+                    <span class="pill">[ GITHUB PAGES ]</span>
+                </div>
+                <div class="project_actions">
+                    <a href="https://gurehmat.github.io/Millhacks-Website/" class="btn btn--primary" target="_blank" rel="noopener">[ LIVE SITE ]</a>
+                    <a href="https://github.com/Gurehmat/Millhacks-Website" class="btn btn--ghost" target="_blank" rel="noopener">[ SOURCE ]</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="./js/main.js"></script>
 </body>
 
