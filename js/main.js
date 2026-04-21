@@ -100,9 +100,14 @@
       document.body.classList.remove('modal-open');
     }
     document.querySelectorAll('.project-card[data-modal]').forEach(function (card) {
-      card.addEventListener('click', function () { openModal(card.getAttribute('data-modal')); });
+      card.addEventListener('click', function () {
+        openModal(card.getAttribute('data-modal'));
+      });
       card.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(card.getAttribute('data-modal')); }
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openModal(card.getAttribute('data-modal'));
+        }
       });
     });
     document.querySelectorAll('[data-modal-close]').forEach(function (btn) {
