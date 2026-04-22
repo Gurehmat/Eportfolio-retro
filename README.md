@@ -1,73 +1,126 @@
-# Eportfolio-retro
+# Gurehmat Chahal - Portfolio
 
-A retro-styled personal portfolio site with a terminal-inspired aesthetic, dark/light mode, and subtle animations.
+A retro-inspired, terminal-themed personal portfolio built to showcase projects, technical skills, and experience in a clean single-page experience.
 
-**Live site:** [gurehmat.github.io/Eportfolio-retro](https://gurehmat.github.io/Eportfolio-retro/)
-
----
-
-## Project structure
-
-```
-Eportfolio-retro/
-├── index.html      # Single-page portfolio — hero, work, resume, about, modals
-├── about.html      # About — bio, capabilities, childhood photo toggle (legacy)
-├── work.html       # Work — project cards (legacy)
-├── resume.html     # Resume PDF embed (legacy)
-├── css/
-│   └── styles.css  # All styles (themes, layout, components)
-├── js/
-│   └── main.js     # Theme toggle, scroll reveal, typewriter, modals, nav spy
-├── assets/         # Images, resume PDF, icons
-└── README.md
-```
+**Live Website:** [https://gurehmat.dev](https://gurehmat.dev)  
+**Alt Link:** [https://gurehmat.github.io/Eportfolio-retro/](https://gurehmat.github.io/Eportfolio-retro/)
 
 ---
 
-## Pages
+## About This Project
 
-| Page    | Route        | Description |
-|---------|--------------|-------------|
-| **Home**    | `index.html` | Hero with avatar & terminal, work grid, resume, about, project modals |
-| **About**   | `about.html` | Childhood photo (click to toggle pixelated ↔ normal), capabilities, tools |
-| **Work**    | `work.html` | Project cards with thumbnails, stack, and links |
-| **Resume**  | `resume.html` | Embedded resume PDF |
+This portfolio is designed to feel like an interactive developer terminal while staying fast, accessible, and easy to maintain.
+
+It highlights:
+- personal branding and profile summary
+- selected project work with modal deep-dives
+- downloadable resume and embedded resume section
+- contact links (GitHub, LinkedIn, email)
 
 ---
 
 ## Features
 
-- **Dark / light mode** — Toggle in the top bar; choice is saved in `localStorage` and defaults to system preference.
-- **Micro-animations** — Hover lift on buttons and cards, gentle float on avatar/childhood photo, scroll-triggered reveals.
-- **Typewriter** (Home) — Terminal username types in on load (respects `prefers-reduced-motion`).
-- **Project cursor** (Work) — Blinking cursor in each project “prompt” bar.
-- **Image toggle** (About) — Click the childhood photo to switch between pixelated and normal versions.
----
-
-## Tech stack
-
-- **HTML** — Semantic markup, no framework.
-- **CSS** — Single file (`css/styles.css`): CSS variables for theming, responsive breakpoints, reduced-motion support.
-- **JavaScript** — Vanilla JS in `js/main.js`; no build step.
+- **Terminal-style UI** with modern, responsive layout
+- **Dark/light theme toggle** persisted via `localStorage`, with system-preference fallback
+- **Smooth reveal animations** and section fade-ins using `IntersectionObserver`
+- **Typewriter intro effect** that respects `prefers-reduced-motion`
+- **Keyboard-accessible project modals** (open, close, Escape handling, backdrop click)
+- **Scroll progress bar** and active-section nav highlighting
+- **Childhood photo pixel-toggle interaction** in the about section
+- **SEO + social metadata** (Open Graph, Twitter cards, JSON-LD structured data)
 
 ---
 
-## Run locally
+## Tech Stack
 
-Use any static file server. Examples:
-
-- **VS Code:** Install the “Live Server” extension → right‑click `index.html` → **Open with Live Server**.
-- **CLI:** From the project root, run `npx serve .` or `python -m http.server 8000`, then open `http://localhost:8000` (or the port shown).
-
-You can also open `index.html` directly in the browser; all current features work without a server.
+- **HTML5** (semantic structure)
+- **CSS3** (`css/styles.css`, custom properties, responsive breakpoints)
+- **Vanilla JavaScript** (`js/main.js`, no framework or build pipeline)
+- **Static hosting** (GitHub Pages + custom domain)
 
 ---
 
-## Customization
+## Project Structure
 
-| What to change | Where |
-|----------------|--------|
-| **Colors, spacing, typography** | `css/styles.css` (`:root` and `[data-theme="dark"]` for dark mode) |
-| **Theme toggle, scroll reveal, typewriter, modals** | `js/main.js` |
-| **Images and resume** | `assets/` (update paths in HTML if you rename files) |
-| **Nav links and social icons** | Top bar in each HTML file (`index.html`, `about.html`, `work.html`, `resume.html`) |
+```text
+Eportfolio-retro/
+|-- index.html            # Main single-page portfolio
+|-- css/
+|   `-- styles.css        # Global styling, themes, layout, effects
+|-- js/
+|   `-- main.js           # Interactions, theme, modals, reveal logic
+|-- assets/               # Images, icons, resume PDF, media
+|-- site.webmanifest      # PWA/web app metadata
+|-- sitemap.xml           # Search indexing metadata
+|-- robots.txt            # Crawler directives
+|-- CNAME                 # Custom domain for GitHub Pages
+`-- README.md
+```
+
+---
+
+## Run Locally
+
+No build step is required.
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Gurehmat/Eportfolio-retro.git
+   cd Eportfolio-retro
+   ```
+2. Serve with any static server:
+   ```bash
+   npx serve .
+   ```
+   or
+   ```bash
+   python -m http.server 8000
+   ```
+3. Open the local URL shown in your terminal.
+
+You can also open `index.html` directly in a browser for quick preview.
+
+---
+
+## Customize It
+
+- **Profile text and sections:** edit `index.html`
+- **Colors, spacing, typography, component styles:** edit `css/styles.css`
+- **Theme toggle, animations, modals, nav behavior:** edit `js/main.js`
+- **Images/icons/resume file:** replace files in `assets/` and update references if names change
+- **Domain and deployment metadata:** update `CNAME`, `site.webmanifest`, `sitemap.xml`, `robots.txt`
+
+---
+
+## Accessibility Notes
+
+- Respects reduced-motion preferences for animated effects
+- Uses semantic headings/sections and descriptive alt text
+- Supports keyboard interaction for project cards/modals
+
+---
+
+## Deployment
+
+This site is deployed as a static site using GitHub Pages and a custom domain.
+
+If deploying your own fork:
+1. Push to your GitHub repository
+2. Enable GitHub Pages in repository settings
+3. (Optional) Configure custom domain via `CNAME`
+
+---
+
+## Contact
+
+- **GitHub:** [https://github.com/Gurehmat](https://github.com/Gurehmat)
+- **LinkedIn:** [https://www.linkedin.com/in/gurehmat-chahal-24696020b/](https://www.linkedin.com/in/gurehmat-chahal-24696020b/)
+- **Email:** [mailto:gurehmat9@gmail.com](mailto:gurehmat9@gmail.com)
+
+---
+
+## License
+
+This project is for personal portfolio use.  
+If you want to reuse parts of it, please reach out first.
