@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Intent Detection Terminal Artifact</title>
+  <style>
+    :root {
+      --ink: #1c1712;
+      --cream: #d4c9b0;
+      --amber: #e8a227;
+      --rust: #c2550a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      background: var(--ink);
+      color: var(--cream);
+      font-family: Consolas, "Courier New", monospace;
+      overflow: hidden;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      padding: 10px;
+    }
+
+    .terminal {
+      width: 100%;
+      height: 100%;
+      border: 1px solid #3e3328;
+      padding: 12px 14px;
+      background: var(--ink);
+      border-radius: 0;
+      overflow: hidden;
+    }
+
+    .output {
+      white-space: pre-wrap;
+      word-break: break-word;
+      overflow-wrap: anywhere;
+      font-size: 12.5px;
+      line-height: 1.45;
+      min-height: 100%;
+    }
+
+    .line {
+      color: var(--cream);
+    }
+
+    .line.header {
+      color: var(--rust);
+    }
+
+    .line.highlight {
+      color: var(--amber);
+    }
+  </style>
+</head>
+<body>
+  <main class="terminal" aria-label="AI intent detection pipeline terminal output">
+    <div id="output" class="output" role="log" aria-live="polite"></div>
+  </main>
+
+  <script>
+    const output = document.getElementById("output");
+    const lineDelayMs = 300;
+    const loopPauseMs = 3000;
+
+    const logLines = [
+      { text: "> session_id: learner_7f2a · module: giving_feedback", tone: "default" },
+      { text: "> receiving input...", tone: "default" },
+      { text: "> \"how do i tell my manager their idea wont work\"", tone: "default" },
+      { text: "", tone: "default" },
+      { text: "> running intent_classifier...", tone: "header" },
+      { text: "> INTENT DETECTED     [ feedback_delivery ]", tone: "highlight" },
+      { text: "> confidence          [ 0.91 ]", tone: "default" },
+      { text: "> secondary           [ workplace_communication ]", tone: "default" },
+      { text: "", tone: "default" },
+      { text: "> checking content_safety_layer...", tone: "header" },
+      { text: "> PII_SCAN            [ clean ]", tone: "default" },
+      { text: "> ESCALATION_FLAGS    [ none ]", tone: "default" },
+      { text: "> STATUS              [ pass ]", tone: "highlight" },
+      { text: "", tone: "default" },
+      { text: "> injecting lesson context...", tone: "header" },
+      { text: "> source: module_4_feedback_frameworks.pdf", tone: "default" },
+      { text: "> tokens injected: 312", tone: "default" },
+      { text: "", tone: "default" },
+      { text: "> routing to gemini-2.5-flash...", tone: "header" },
+      { text: "> response: ready ▮", tone: "highlight" }
+    ];
+
+    const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+    function appendLine(entry) {
+      const line = document.createElement("div");
+      line.className = "line";
+      if (entry.tone === "header") line.classList.add("header");
+      if (entry.tone === "highlight") line.classList.add("highlight");
+      line.textContent = entry.text;
+      output.appendChild(line);
+    }
+
+    async function runCycle() {
+      output.textContent = "";
+      for (const entry of logLines) {
+        appendLine(entry);
+        await wait(lineDelayMs);
+      }
+      await wait(loopPauseMs);
+      runCycle();
+    }
+
+    runCycle();
+  </script>
+</body>
+</html>

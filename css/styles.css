@@ -22,6 +22,7 @@
   --gap-16: 16px;
   --gap-24: 24px;
   --gap-32: 32px;
+  --accent: var(--rust);
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
   --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
   --motion-duration: 0.35s;
@@ -92,6 +93,17 @@ body::before {
     100% { background-position: 100% 50%; }
 }
 
+#scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+    height: 3px;
+    width: 0%;
+    background: var(--accent);
+    pointer-events: none;
+}
+
 a {
     color: inherit;
 }
@@ -127,11 +139,16 @@ img {
 }
 
 .header {
-    background: transparent;
+    background: var(--bg);
     padding: 14px 0;
     z-index: 20;
     position: sticky;
     top: 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease;
+}
+.header.scrolled {
+    border-bottom-color: var(--border-color);
 }
 
 .brand_name {
@@ -167,7 +184,21 @@ img {
     box-shadow: none;
     text-decoration: none;
     font-weight: 900;
+    position: relative;
     transition: transform var(--motion-duration) var(--ease-out), box-shadow var(--motion-duration) var(--ease-out), background var(--motion-duration) ease;
+}
+.nav_link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--ink);
+    transition: width 150ms ease;
+}
+.nav_link:hover::after {
+    width: 100%;
 }
 .nav_link:hover {
     transform: translate(-2px, -2px);
@@ -1555,12 +1586,20 @@ section#about > .panel {
     .tech_pills .pill,
     .proof_strip .pill { animation: none; }
     .modal-overlay { transition: none !important; }
+    section[id] { opacity: 1 !important; transform: none !important; transition: none !important; }
 }
 
 /* ---- Single-page redesign additions ---- */
 
 section[id] {
     scroll-margin-top: 100px;
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+section[id].section-in-view {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Work 2-column grid */
@@ -1621,6 +1660,15 @@ section[id] {
     .work_grid { grid-template-columns: 1fr; }
 }
 
+/* Modal open animation */
+@keyframes modalIn {
+    from { opacity: 0; transform: scale(0.97); }
+    to   { opacity: 1; transform: scale(1); }
+}
+.modal-overlay.is-open .modal-box {
+    animation: modalIn 200ms ease forwards;
+}
+
 /* Modal overlay */
 .modal-overlay {
     display: none;
@@ -1663,6 +1711,28 @@ section[id] {
     display: flex;
     flex-direction: column;
     gap: var(--gap-32);
+}
+.modal-media {
+    width: 100%;
+    max-height: min(48vh, 420px);
+    object-fit: cover;
+    border: 2px solid var(--border-color);
+    background: var(--panel);
+}
+.modal-media--artifact {
+    display: block;
+    width: 100%;
+    height: min(48vh, 420px);
+    max-height: min(48vh, 420px);
+    aspect-ratio: 16 / 10;
+    object-fit: contain;
+    overflow: hidden;
+    background: #1c1712;
+}
+
+[data-theme="dark"] .project_meta-chips .pill,
+[data-theme="dark"] .project_stack .pill {
+    box-shadow: inset 0 -1px 0 #8a3e11;
 }
 .modal-body .project_pitch {
     font-size: 17px;

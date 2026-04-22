@@ -59,6 +59,7 @@
 </head>
 
 <body>
+    <div id="scroll-progress" aria-hidden="true"></div>
     <header class="header">
         <div class="topbar">
             <div class="brand">
@@ -83,7 +84,7 @@
                     <img class="icon-logo" src="./assets/email-pixelated.png" alt="Email">
                 </a>
             </div>
-            <a class="btn btn--resume" href="./assets/Resume_3-4-2026.pdf" download aria-label="Download resume PDF">
+            <a class="btn btn--resume" href="./assets/Resume_Gurehmat%20Chahal.pdf" download aria-label="Download resume PDF">
                 <span class="btn--resume-text btn--resume-text--full">[ RESUME ]</span>
                 <span class="btn--resume-text btn--resume-text--short" aria-hidden="true">[ CV ]</span>
             </a>
@@ -172,7 +173,7 @@
                             </div>
                             <div class="project_meta-chips">
                                 <span class="pill">[ 2026 ]</span>
-                                <span class="pill">[ REACT + TS ]</span>
+                                <span class="pill">[ PERSONAL PROJECT ]</span>
                             </div>
                         </header>
                         <div class="entry_body project_body">
@@ -222,7 +223,7 @@
                                         <h3 class="project_title">AI Lesson Coach</h3>
                                         <span class="project_badge project_badge--shipped">[ SHIPPED ]</span>
                                     </div>
-                                    <p class="project_pitch">Workplace Edge × Riipen. Enterprise AI coaching chatbot for real client. Heuristic intent detection, content safety, SCORM integration. 3-person team.</p>
+                                    <p class="project_pitch">Workplace Edge client project. Enterprise AI coaching chatbot for a real deployment. Heuristic intent detection, content safety, SCORM integration. 3-person team.</p>
                                     <div class="project_stack">
                                         <span class="pill pill--blue">[ REACT 18 ]</span>
                                         <span class="pill pill--blue">[ TYPESCRIPT ]</span>
@@ -393,7 +394,7 @@
                         </div>
 
                         <div class="resume_download-row">
-                            <a class="btn" href="./assets/Resume_3-4-2026.pdf" download>[ &#8595; DOWNLOAD PDF ]</a>
+                            <a class="btn" href="./assets/Resume_Gurehmat%20Chahal.pdf" download>[ &#8595; DOWNLOAD PDF ]</a>
                         </div>
 
                     </div>
@@ -546,6 +547,7 @@
                 <button type="button" class="btn modal-back" data-modal-close>[ &#8592; BACK ]</button>
             </div>
             <div class="modal-body">
+                <img class="modal-media" src="./assets/pantrycheff.png" alt="Screenshot of PantryCheff project">
                 <p class="project_pitch">AI-powered pantry + recipe engine that reduces food waste by cooking from what you already have. Built with React, TypeScript, Supabase (Postgres, Auth, Edge Functions), and Gemini for multimodal fridge scanning.</p>
                 <ul class="project_bullets">
                     <li><strong>Engineered</strong> a Set-based recipe matching algorithm with O(P+R) complexity and confidence scoring (exact, partial, fuzzy), covered by targeted unit tests.</li>
@@ -588,7 +590,15 @@
                 <button type="button" class="btn modal-back" data-modal-close>[ &#8592; BACK ]</button>
             </div>
             <div class="modal-body">
-                <p class="project_pitch">Enterprise AI coaching chatbot built for a real client (Workplace Edge × Riipen) as part of a 3-person team. React 18, TypeScript, Express, Prisma, Gemini 2.5 Flash — frontend on Vercel, API on Railway, Turso (libSQL) as database.</p>
+                <iframe
+                    class="modal-media modal-media--artifact"
+                    src="./assets/intent-terminal-artifact.html"
+                    title="AI Lesson Coach intent detection pipeline terminal animation"
+                    loading="lazy"
+                    scrolling="no"
+                    aria-label="Animated terminal artifact showing AI intent detection pipeline">
+                </iframe>
+                <p class="project_pitch">Enterprise AI coaching chatbot built for a real Workplace Edge client as part of a 3-person team. React 18, TypeScript, Express, Prisma, Gemini 2.5 Flash, frontend on Vercel, API on Railway, and Turso (libSQL) as the database.</p>
                 <ul class="project_bullets">
                     <li><strong>Built</strong> a heuristic intent detection pipeline to classify learner requests and dynamically inject lesson content into Gemini's system prompt, adapting responses to the learner's current module.</li>
                     <li><strong>Implemented</strong> a content safety layer with PII stripping, keyword-based escalation detection for HR/crisis topics, and input filtering before any data reaches the model.</li>
@@ -622,6 +632,7 @@
                 <button type="button" class="btn modal-back" data-modal-close>[ &#8592; BACK ]</button>
             </div>
             <div class="modal-body">
+                <img class="modal-media" src="./assets/captcha.png" alt="Screenshot related to C.A.P.T.C.H.A. project">
                 <p class="project_pitch">Chrome Extension built solo at the Toronto Stupid Ideas Hackathon. Manifest V3, vanilla JavaScript. A deliberately absurd take on the CAPTCHA concept — designed to be frustrating by design.</p>
                 <ul class="project_bullets">
                     <li><strong>Built</strong> as a Manifest V3 Chrome Extension from scratch in a single hackathon session.</li>
@@ -653,6 +664,7 @@
                 <button type="button" class="btn modal-back" data-modal-close>[ &#8592; BACK ]</button>
             </div>
             <div class="modal-body">
+                <img class="modal-media" src="./assets/millhacks.png" alt="Screenshot of SEED project page">
                 <p class="project_pitch">Single-page hackathon site for SEED (Sustainable Environmental Eradication of Debris), a climate-tech concept to reduce coastal plastic pollution. MillHacks 2025 — Best UI. Clear storytelling and responsive, judge-facing UI.</p>
                 <ul class="project_bullets">
                     <li><strong>Designed</strong> a mobile-first, scannable layout optimized for judges under hackathon time constraints.</li>
