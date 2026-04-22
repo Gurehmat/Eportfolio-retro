@@ -10,14 +10,14 @@ A retro-styled personal portfolio site with a terminal-inspired aesthetic, dark/
 
 ```
 Eportfolio-retro/
-├── index.html      # Home — hero, explore links, tech stack
-├── about.html      # About — bio, capabilities, childhood photo toggle
-├── work.html       # Work — project cards with thumbnails
-├── journal.html    # Journal — learning entries with pagination
+├── index.html      # Single-page portfolio — hero, work, resume, about, modals
+├── about.html      # About — bio, capabilities, childhood photo toggle (legacy)
+├── work.html       # Work — project cards (legacy)
+├── resume.html     # Resume PDF embed (legacy)
 ├── css/
 │   └── styles.css  # All styles (themes, layout, components)
 ├── js/
-│   └── main.js     # Theme toggle, scroll reveal, typewriter, journal pagination
+│   └── main.js     # Theme toggle, scroll reveal, typewriter, modals, nav spy
 ├── assets/         # Images, resume PDF, icons
 └── README.md
 ```
@@ -28,10 +28,10 @@ Eportfolio-retro/
 
 | Page    | Route        | Description |
 |---------|--------------|-------------|
-| **Home**    | `index.html` | Hero with avatar & terminal, explore section, tech pills |
+| **Home**    | `index.html` | Hero with avatar & terminal, work grid, resume, about, project modals |
 | **About**   | `about.html` | Childhood photo (click to toggle pixelated ↔ normal), capabilities, tools |
 | **Work**    | `work.html` | Project cards with thumbnails, stack, and links |
-| **Journal** | `journal.html` | Learning journal entries with prev/next pagination |
+| **Resume**  | `resume.html` | Embedded resume PDF |
 
 ---
 
@@ -42,8 +42,6 @@ Eportfolio-retro/
 - **Typewriter** (Home) — Terminal username types in on load (respects `prefers-reduced-motion`).
 - **Project cursor** (Work) — Blinking cursor in each project “prompt” bar.
 - **Image toggle** (About) — Click the childhood photo to switch between pixelated and normal versions.
-- **Journal pagination** — Previous/next controls when there are more than three entries.
-
 ---
 
 ## Tech stack
@@ -70,6 +68,6 @@ You can also open `index.html` directly in the browser; all current features wor
 | What to change | Where |
 |----------------|--------|
 | **Colors, spacing, typography** | `css/styles.css` (`:root` and `[data-theme="dark"]` for dark mode) |
-| **Theme toggle, scroll reveal, typewriter, pagination** | `js/main.js` |
+| **Theme toggle, scroll reveal, typewriter, modals** | `js/main.js` |
 | **Images and resume** | `assets/` (update paths in HTML if you rename files) |
-| **Nav links and social icons** | Top bar in each HTML file (`index.html`, `about.html`, `work.html`, `journal.html`) |
+| **Nav links and social icons** | Top bar in each HTML file (`index.html`, `about.html`, `work.html`, `resume.html`) |
