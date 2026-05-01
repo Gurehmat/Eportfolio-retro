@@ -313,6 +313,46 @@
                         </div>
                     </article>
 
+                    <!-- The Record -->
+                    <article class="card entry project_entry project-card reveal"
+                             data-modal="the-record"
+                             role="button"
+                             tabindex="0"
+                             aria-label="Open The Record project details">
+                        <header class="entry_header project_header">
+                            <div class="project_terminal-left">
+                                <span class="terminal_dots" aria-hidden="true">
+                                    <span class="terminal_dot terminal_dot--red"></span>
+                                    <span class="terminal_dot terminal_dot--dim"></span>
+                                    <span class="terminal_dot terminal_dot--dim"></span>
+                                </span>
+                                <span class="project_prompt">the-record@projects:~$</span>
+                            </div>
+                            <div class="project_meta-chips">
+                                <span class="pill">[ 2026 ]</span>
+                                <span class="pill">[ HACKATHON ]</span>
+                            </div>
+                        </header>
+                        <div class="entry_body project_body">
+                            <div class="project_layout">
+                                <div class="project_content">
+                                    <div class="project_title_row">
+                                        <h3 class="project_title">The Record</h3>
+                                        <span class="project_badge">[ WINNER · BEST ELEVENLABS ]</span>
+                                    </div>
+                                    <p class="project_pitch">Live AI-powered debate referee built solo at ConHacks 2026 (36-hour hackathon). An AI judge analyzes fallacies and false claims in real time, then delivers a final credibility verdict via text-to-speech.</p>
+                                    <div class="project_stack">
+                                        <span class="pill pill--blue">[ REACT 18 ]</span>
+                                        <span class="pill pill--blue">[ TYPESCRIPT ]</span>
+                                        <span class="pill">[ GEMINI 2.5 FLASH ]</span>
+                                        <span class="pill">[ ELEVENLABS TTS ]</span>
+                                        <span class="pill">[ ZUSTAND ]</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
                 </div>
             </div>
         </section>
@@ -615,6 +655,47 @@
                     <span class="pill">[ RAILWAY ]</span>
                 </div>
                 <p class="muted" style="font-size:13px;">Proprietary — no public repository or demo link.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: The Record -->
+    <div class="modal-overlay" id="modal-the-record" role="dialog" aria-modal="true" aria-labelledby="modal-the-record-title">
+        <div class="modal-box">
+            <div class="modal-bar">
+                <span class="terminal_dots" aria-hidden="true">
+                    <span class="terminal_dot terminal_dot--red"></span>
+                    <span class="terminal_dot terminal_dot--dim"></span>
+                    <span class="terminal_dot terminal_dot--dim"></span>
+                </span>
+                <span class="modal-title" id="modal-the-record-title">The Record</span>
+                <button type="button" class="btn modal-back" data-modal-close>[ &#8592; BACK ]</button>
+            </div>
+            <div class="modal-body">
+                <img class="modal-media" src="./assets/the-record-rosy.vercel.app_.png" alt="Screenshot of The Record debate referee app">
+                <p class="project_pitch">A live AI-powered debate referee app built solo at ConHacks 2026 (36-hour hackathon). Two debaters argue a topic in real time while an AI judge listens, evaluates logical fallacies and false claims, and delivers a final credibility ruling through text-to-speech in a neo-brutalist courtroom-themed UI.</p>
+                <ul class="project_bullets">
+                    <li><strong>Captured</strong> live speech-to-text transcripts to track both debaters throughout each round.</li>
+                    <li><strong>Analyzed</strong> each argument with Gemini 2.5 Flash to flag logical fallacies and unsupported claims in real time.</li>
+                    <li><strong>Designed</strong> a credibility-based scoring model focused on argument quality instead of a traditional win/loss outcome.</li>
+                    <li><strong>Delivered</strong> the final judge ruling with ElevenLabs text-to-speech for a courtroom-style finish.</li>
+                    <li><strong>Built</strong> a neo-brutalist courtroom interface to support the live debate experience.</li>
+                    <li><strong>Managed</strong> live argument state with Zustand for responsive, synchronized judging updates.</li>
+                </ul>
+                <div class="project_stack">
+                    <span class="pill pill--blue">[ REACT 18 ]</span>
+                    <span class="pill pill--blue">[ TYPESCRIPT ]</span>
+                    <span class="pill">[ VITE ]</span>
+                    <span class="pill">[ TAILWIND CSS ]</span>
+                    <span class="pill">[ ZUSTAND ]</span>
+                    <span class="pill pill--blue">[ GEMINI 2.5 FLASH API ]</span>
+                    <span class="pill">[ ELEVENLABS TTS API ]</span>
+                </div>
+                <p class="muted" style="font-size:13px;">Winner, Best Use of ElevenLabs at ConHacks 2026 · Solo hackathon project.</p>
+                <div class="project_actions">
+                    <a href="https://the-record-rosy.vercel.app" class="btn btn--primary" target="_blank" rel="noopener">[ LIVE DEMO ]</a>
+                    <a href="https://github.com/Gurehmat/the-record" class="btn btn--ghost" target="_blank" rel="noopener">[ SOURCE ]</a>
+                </div>
             </div>
         </div>
     </div>
