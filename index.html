@@ -156,8 +156,48 @@
                 </div>
                 <div class="work_grid">
 
-                    <!-- PantryCheff -->
+                    <!-- Meridian -->
                     <article class="card entry project_entry project-card reveal"
+                             data-modal="meridian"
+                             role="button"
+                             tabindex="0"
+                             aria-label="Open Meridian project details">
+                        <header class="entry_header project_header">
+                            <div class="project_terminal-left">
+                                <span class="terminal_dots" aria-hidden="true">
+                                    <span class="terminal_dot terminal_dot--red"></span>
+                                    <span class="terminal_dot terminal_dot--dim"></span>
+                                    <span class="terminal_dot terminal_dot--dim"></span>
+                                </span>
+                                <span class="project_prompt">meridian@projects:~$</span>
+                            </div>
+                            <div class="project_meta-chips">
+                                <span class="pill">[ 2026 ]</span>
+                                <span class="pill">[ PERSONAL PROJECT ]</span>
+                            </div>
+                        </header>
+                        <div class="entry_body project_body">
+                            <div class="project_layout">
+                                <div class="project_content">
+                                    <div class="project_title_row">
+                                        <h3 class="project_title">Meridian</h3>
+                                        <span class="project_badge">[ FEATURED ]</span>
+                                    </div>
+                                    <p class="project_pitch">Personal knowledge graph that maps your thinking and finds where your ideas contradict each other.</p>
+                                    <div class="project_stack">
+                                        <span class="pill pill--blue">[ REACT 18 ]</span>
+                                        <span class="pill pill--blue">[ TYPESCRIPT ]</span>
+                                        <span class="pill">[ FASTAPI ]</span>
+                                        <span class="pill">[ GEMINI 2.5 FLASH ]</span>
+                                        <span class="pill">[ VECTOR SEARCH ]</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PantryCheff -->
+                    <article class="card entry project_entry project-card reveal reveal--stagger-1"
                              data-modal="pantrycheff"
                              role="button"
                              tabindex="0"
@@ -197,7 +237,7 @@
                     </article>
 
                     <!-- AI Lesson Coach -->
-                    <article class="card entry project_entry project-card reveal reveal--stagger-1"
+                    <article class="card entry project_entry project-card reveal reveal--stagger-2"
                              data-modal="ai-lesson-coach"
                              role="button"
                              tabindex="0"
@@ -237,7 +277,7 @@
                     </article>
 
                     <!-- C.A.P.T.C.H.A. -->
-                    <article class="card entry project_entry project-card reveal reveal--stagger-2"
+                    <article class="card entry project_entry project-card reveal reveal--stagger-3"
                              data-modal="captcha"
                              role="button"
                              tabindex="0"
@@ -275,7 +315,7 @@
                     </article>
 
                     <!-- SEED -->
-                    <article class="card entry project_entry project-card reveal reveal--stagger-3"
+                    <article class="card entry project_entry project-card reveal reveal--stagger-4"
                              data-modal="seed"
                              role="button"
                              tabindex="0"
@@ -314,7 +354,7 @@
                     </article>
 
                     <!-- The Record -->
-                    <article class="card entry project_entry project-card reveal"
+                    <article class="card entry project_entry project-card reveal reveal--stagger-5"
                              data-modal="the-record"
                              role="button"
                              tabindex="0"
@@ -573,6 +613,49 @@
     </main>
 
     <!-- ======================================================= MODALS -->
+
+    <!-- Modal: Meridian -->
+    <div class="modal-overlay" id="modal-meridian" role="dialog" aria-modal="true" aria-labelledby="modal-meridian-title">
+        <div class="modal-box">
+            <div class="modal-bar">
+                <span class="terminal_dots" aria-hidden="true">
+                    <span class="terminal_dot terminal_dot--red"></span>
+                    <span class="terminal_dot terminal_dot--dim"></span>
+                    <span class="terminal_dot terminal_dot--dim"></span>
+                </span>
+                <span class="modal-title" id="modal-meridian-title">Meridian</span>
+                <button type="button" class="btn modal-back" data-modal-close>[ &#8592; BACK ]</button>
+            </div>
+            <div class="modal-body">
+                <img class="modal-media" src="./assets/meridian.png" alt="Screenshot of Meridian knowledge graph app">
+                <p class="project_pitch">Full-stack AI app that ingests notes and PDFs, extracts concepts via Gemini 2.5 Flash, generates 384-dimensional semantic embeddings with sentence-transformers, runs cosine similarity search across all prior knowledge using MongoDB Atlas Vector Search, and surfaces contradictions and unexpected cross-domain connections. Visualized as an interactive force-directed graph with belief shift tracking over time.</p>
+                <ul class="project_bullets">
+                    <li><strong>Built</strong> a note and PDF ingestion pipeline that extracts concepts with Gemini 2.5 Flash.</li>
+                    <li><strong>Generated</strong> 384-dimensional semantic embeddings with sentence-transformers for knowledge retrieval.</li>
+                    <li><strong>Implemented</strong> cosine similarity search over prior knowledge using MongoDB Atlas Vector Search.</li>
+                    <li><strong>Surfaced</strong> contradictions and unexpected cross-domain links across the user's knowledge base.</li>
+                    <li><strong>Visualized</strong> connected ideas in an interactive force-directed graph with belief shift tracking over time.</li>
+                </ul>
+                <div class="project_stack">
+                    <span class="pill pill--blue">[ REACT 18 ]</span>
+                    <span class="pill pill--blue">[ TYPESCRIPT ]</span>
+                    <span class="pill">[ PYTHON ]</span>
+                    <span class="pill">[ FASTAPI ]</span>
+                    <span class="pill pill--blue">[ GEMINI 2.5 FLASH ]</span>
+                    <span class="pill">[ MONGODB ATLAS ]</span>
+                    <span class="pill">[ VECTOR SEARCH ]</span>
+                    <span class="pill">[ SENTENCE-TRANSFORMERS ]</span>
+                    <span class="pill">[ REACT-FORCE-GRAPH-2D ]</span>
+                    <span class="pill">[ FIREBASE AUTH ]</span>
+                    <span class="pill">[ TAILWIND CSS ]</span>
+                </div>
+                <p class="muted" style="font-size:13px;">Local only, no public live demo.</p>
+                <div class="project_actions">
+                    <a href="https://github.com/Gurehmat/Meridian" class="btn btn--ghost" target="_blank" rel="noopener">[ SOURCE ]</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal: PantryCheff -->
     <div class="modal-overlay" id="modal-pantrycheff" role="dialog" aria-modal="true" aria-labelledby="modal-pantrycheff-title">
