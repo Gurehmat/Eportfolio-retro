@@ -388,6 +388,8 @@ section#about > .panel {
 .reveal--stagger-3 { transition-delay: 0.25s; }
 .reveal--stagger-4 { transition-delay: 0.35s; }
 .reveal--stagger-5 { transition-delay: 0.45s; }
+.reveal--stagger-6 { transition-delay: 0.55s; }
+.reveal--stagger-7 { transition-delay: 0.65s; }
 
 .hero .card {
     opacity: 0;
@@ -1442,6 +1444,32 @@ section[id].section-in-view {
     object-fit: contain;
     overflow: hidden;
     background: #1c1712;
+}
+/* No-screenshot placeholder: reuses the site's radial-gradient/panel treatment
+   for cards without a product image (NDA work, or live-only builds). */
+.modal-media--placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: min(38vh, 320px);
+    max-height: min(38vh, 320px);
+    padding: var(--gap-24);
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+    letter-spacing: 0.02em;
+    background:
+        radial-gradient(600px 360px at 20% 15%, rgba(59,109,214,0.10), transparent 55%),
+        radial-gradient(500px 320px at 85% 85%, rgba(194,85,10,0.08), transparent 55%),
+        var(--panel);
+}
+[data-theme="dark"] .modal-media--placeholder {
+    background:
+        radial-gradient(600px 360px at 20% 15%, rgba(123,163,255,0.12), transparent 55%),
+        radial-gradient(500px 320px at 85% 85%, rgba(240,112,96,0.10), transparent 55%),
+        var(--panel);
 }
 
 [data-theme="dark"] .project_meta-chips .pill,
