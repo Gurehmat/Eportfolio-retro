@@ -30,7 +30,7 @@
 }
 
 [data-theme="dark"] {
-  /* Warm dark — dark stone/walnut, not black; pairs with the cream light theme */
+  /* Warm dark: dark stone/walnut, not black; pairs with the cream light theme */
   --bg: #161210;
   --ink: #e6e2da;
   --muted: #9c978d;
@@ -521,6 +521,12 @@ section#about > .panel {
     gap: 0.5rem;
     margin-top: 0.625rem;
 }
+.avatar_card .pill--seeking {
+    font-weight: normal;
+}
+.nowrap {
+    white-space: nowrap;
+}
 
 .terminal {
     background: var(--card-bg);
@@ -545,7 +551,9 @@ section#about > .panel {
 }
 
 .terminal_title {
-    margin: 0 0 6px;
+    margin: 0 0 10px;
+    font-size: clamp(1.25rem, 1rem + 0.9vw, 1.75rem);
+    line-height: 1.25;
     font-weight: 900;
 }
 
@@ -556,6 +564,10 @@ section#about > .panel {
 .pill--blue {
     background: var(--blue);
     color: var(--ink);
+}
+/* Dark --ink is light, which washes out on the light dark-mode blue */
+[data-theme="dark"] .pill--blue {
+    color: var(--bg);
 }
 
 .pill--red {
@@ -580,23 +592,6 @@ section#about > .panel {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-}
-.tech_pills .pill {
-    animation: pillBreath 3s ease-in-out infinite;
-}
-.tech_pills .pill:nth-child(1) { animation-delay: 0s; }
-.tech_pills .pill:nth-child(2) { animation-delay: 0.2s; }
-.tech_pills .pill:nth-child(3) { animation-delay: 0.4s; }
-.tech_pills .pill:nth-child(4) { animation-delay: 0.6s; }
-.tech_pills .pill:nth-child(5) { animation-delay: 0.8s; }
-.tech_pills .pill:nth-child(6) { animation-delay: 1s; }
-.tech_pills .pill:nth-child(7) { animation-delay: 1.2s; }
-.tech_pills .pill:nth-child(8) { animation-delay: 1.4s; }
-.tech_pills .pill:nth-child(9) { animation-delay: 1.6s; }
-.tech_pills .pill:nth-child(10) { animation-delay: 1.8s; }
-@keyframes pillBreath {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.88; }
 }
 
 .about_bio {
@@ -681,7 +676,7 @@ section#about > .panel {
     padding: 0.75rem 0.875rem;
 }
 
-/* Work / Project cards — reuse global .card/.entry, only layout here */
+/* Work / Project cards: reuse global .card/.entry, only layout here */
 .project_entry .entry_header {
     gap: var(--gap-16);
     min-width: 0;
@@ -863,7 +858,7 @@ section#about > .panel {
     font-weight: 900;
 }
 
-/* ≤768px: mobile header — row2 nav | actions, row3 full-width resume */
+/* ≤768px: mobile header, row2 nav | actions, row3 full-width resume */
 @media (max-width: 768px) {
 
     .topbar .nav {
@@ -964,7 +959,7 @@ section#about > .panel {
 
 }
 
-/* ≤768px: page content — buttons and pills (site-wide) */
+/* ≤768px: page content, buttons and pills (site-wide) */
 @media (max-width: 768px) {
     main .btn,
     .container .btn {
@@ -1048,7 +1043,7 @@ section#about > .panel {
     }
 }
 
-/* Wide: single flex row — DOM order: brand, nav, actions, resume */
+/* Wide: single flex row, DOM order: brand, nav, actions, resume */
 @media (min-width: 1281px) {
     .topbar {
         align-items: center;
@@ -1070,7 +1065,7 @@ section#about > .panel {
     }
 }
 
-/* Work page: stack terminal row, wrap pills, scale actions — fits narrow cards */
+/* Work page: stack terminal row, wrap pills, scale actions so it fits narrow cards */
 @media (max-width: 768px) {
     .project_entry .entry_header {
         flex-direction: column;
@@ -1300,7 +1295,6 @@ section#about > .panel {
     .terminal_top { animation: none; }
     .avatar_card .card_media img,
     .about_childhood-media .childhood-photo { animation: none; }
-    .tech_pills .pill { animation: none; }
     .modal-overlay { transition: none !important; }
     section[id] { opacity: 1 !important; transform: none !important; transition: none !important; }
 }
@@ -1353,7 +1347,7 @@ section[id].section-in-view {
     flex-direction: column;
     gap: var(--gap-16);
     min-height: 0;
-    /* Outer .card already gives a heavy frame — drop the faint 1px inner box */
+    /* Outer .card already gives a heavy frame: drop the faint 1px inner box */
     border: none;
     margin-top: 0;
 }
@@ -2072,5 +2066,31 @@ body.modal-open {
 
     .nav_link {
         padding: 0.35rem 0.25rem;
+    }
+}
+
+/* Full name in the hero card: shrink on phones so it stays on one line */
+@media (max-width: 431px) {
+    #home .avatar_card .h1 {
+        font-size: clamp(18px, 6.2vw, 26px);
+        white-space: nowrap;
+    }
+}
+
+/* Phones: smaller hero photo so the headline and first bullets show sooner */
+@media (max-width: 480px) {
+    #home .avatar_card .card_media {
+        max-width: 108px;
+    }
+}
+@media (max-width: 320px) {
+    #home .avatar_card .card_media {
+        max-width: 84px;
+    }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+    #home .avatar_card .card_media {
+        max-width: 180px;
+        margin-inline: auto;
     }
 }

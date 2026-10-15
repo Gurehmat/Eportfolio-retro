@@ -115,7 +115,7 @@ If deploying your own fork:
 ## Contact
 
 - **GitHub:** [https://github.com/Gurehmat](https://github.com/Gurehmat)
-- **LinkedIn:** [https://www.linkedin.com/in/gurehmat-chahal-24696020b/](https://www.linkedin.com/in/gurehmat-chahal-24696020b/)
+- **LinkedIn:** [https://www.linkedin.com/in/gurehmat](https://www.linkedin.com/in/gurehmat)
 - **Email:** [mailto:gurehmat9@gmail.com](mailto:gurehmat9@gmail.com)
 
 ---
