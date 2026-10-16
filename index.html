@@ -497,7 +497,7 @@
                                 <p class="resume_entry-meta">Prepr Foundation &middot; Toronto, ON (Remote) &middot; Jun 2026 &ndash; Sep 2026</p>
                                 <ul class="resume_entry-bullets">
                                     <li>Fixed a critical production security vulnerability that exposed users' personal data to logged-out requests, adding authentication checks across 11 Laravel API resources.</li>
-                                    <li>Cleaned up duplicated validation logic across a 1,200+ file PHP/Laravel codebase by consolidating it into reusable validation rules, giving the team one source of truth for name, email, and record checks.</li>
+                                    <li>Gave the team one source of truth for validation across a 1,200+ file PHP/Laravel codebase by consolidating duplicated name, email, and record checks into reusable validation rules.</li>
                                     <li>Unblocked local development for a 4-person team by fixing recurring Docker crashes caused by database seeding, and flagged OAuth redirect and XSS vulnerabilities during a security audit.</li>
                                 </ul>
                             </div>
@@ -506,9 +506,9 @@
                                 <p class="resume_entry-title">AI / Backend Developer</p>
                                 <p class="resume_entry-meta">Aeternum &middot; Remote &middot; May 2026 &ndash; Jul 2026</p>
                                 <ul class="resume_entry-bullets">
-                                    <li>Built permission checks into an AI search pipeline (RAG) over private user records, filtering out restricted records before search runs so users never see data they aren't allowed to access.</li>
-                                    <li>Improved search relevance by tuning a similarity threshold on vector embeddings in PostgreSQL (pgvector), cutting weak, near-miss matches from results.</li>
-                                    <li>Took over as sole backend developer after a teammate left mid-project and delivered all 14 remaining tickets, shipping FastAPI search and AI-answer endpoints through code review.</li>
+                                    <li>Prevented users from seeing records they weren't allowed to access in an AI search pipeline (RAG) over private data by enforcing per-record permission checks before search runs.</li>
+                                    <li>Improved search relevance by cutting weak, near-miss matches from results, tuning a similarity threshold on vector embeddings in PostgreSQL (pgvector).</li>
+                                    <li>Shipped the platform's FastAPI search and AI-answer endpoints as sole backend developer, owning 14 tickets end to end from design through code review.</li>
                                 </ul>
                             </div>
 
@@ -518,7 +518,7 @@
                                 <ul class="resume_entry-bullets">
                                     <li>Prevented duplicate charges and duplicate customer emails in production by designing a booking-to-payment workflow with Stripe that safely handles repeated payment events, built on Cloudflare Workers.</li>
                                     <li>Expanded automated email coverage from 7 to all 16 required flows across signup, booking, and invoicing by building a notification system with Resend, rolled out safely behind feature flags.</li>
-                                    <li>Built a real-time availability system that reserves warehouse space across overlapping bookings and powers the booking calendar, keeping availability accurate.</li>
+                                    <li>Kept warehouse availability accurate across overlapping bookings by building a real-time reservation engine that tracks space across 3 booking statuses and powers the booking calendar.</li>
                                 </ul>
                             </div>
 
@@ -795,7 +795,7 @@
                 <ul class="project_bullets">
                     <li><strong>Built</strong> a permission-gated retrieval pipeline that enforces access rules before vector search, preventing restricted content from entering ranked results.</li>
                     <li><strong>Built</strong> semantic search plus a retrieval-augmented answer endpoint over the user's own records.</li>
-                    <li><strong>Assumed</strong> full backend ownership mid-project and completed the remaining API, retrieval, and integration work.</li>
+                    <li><strong>Owned</strong> the backend end to end as sole developer, shipping the API, retrieval, and integration work.</li>
                 </ul>
                 <div class="project_stack">
                     <span class="pill">[ FASTAPI ]</span>
